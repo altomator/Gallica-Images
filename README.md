@@ -17,7 +17,7 @@ Le modèle reprend les valeurs normalisée de la zone d'indexation [285](https:/
 - **photographie** (négative, positive, positive directe, numérique)
 - **document électronique** (né numérique) 
 
-Note : la [zone 285](https://multimedia-ext.bnf.fr/pdf/pb-RIMB08_285.pdf) reprend les informations de la [zone 280]((https://multimedia-ext.bnf.fr/pdf/pb-RIMB18_280.pdf) (texte rédigé) mais en les normalisant avec un vocabulaire contrôlé.
+_Note_ : la [zone 285](https://multimedia-ext.bnf.fr/pdf/pb-RIMB08_285.pdf) reprend les informations de la [zone 280]((https://multimedia-ext.bnf.fr/pdf/pb-RIMB18_280.pdf) (texte rédigé) mais en les normalisant avec un vocabulaire contrôlé.
 
 La sous-zone [$j](https://www.bnf.fr/sites/default/files/2018-11/intermarc_ref_if-tech-img.pdf) décrit la technique précise de l'image (pour le dessin par exemple : crayon, fusain, pastel, etc.), mais ce niveau de description n'est pas mis en oeuvre dans le projet.
 
@@ -76,7 +76,7 @@ Un référentiel dédié existe pour les cartes et plans (zone [647](https://www
 - **Tableau** (au sens d'illustration dans un document imprimé)
 - **Autres**
 
-Notes : 
+_Notes_ : 
 - les sous-types de la catégorie _image_ doivent être mobilisés selon les genres documentaire à traiter. 
 - Selon les contextes, des sous-catégories peuvent être considérées comme d'importance et valorisées en tant que type (par exemple les mots-croisés dans les collections de périodiques).
 

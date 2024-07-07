@@ -61,11 +61,10 @@ Un référentiel dédié existe pour les cartes et plans (zone [647](https://www
 - **Image**
     - Image à découper
     - Image de mode
- - Image de presse
- - Image d'Épinal
- - Image publicitaire
- - Image religieuse 
-
+    - Image de presse
+    - Image d'Épinal
+    - Image publicitaire
+    - Image religieuse 
 - **Jeu** (album de jeux pour enfants, album à colorier, jeu de l'oie, puzzle, rébus, mots-croisés...)
 - **Maquette** (à découper, de reliure, de décor, de costume...)
 - **Menu** (de restaurant)

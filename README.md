@@ -59,8 +59,8 @@ Un référentiel dédié existe pour les cartes et plans (zone [647](https://www
 - **Ex-libris**
 - **Graphique** (graphe, schéma technique...)
 - **Image**
- - Image à découper
- - Image de mode
+    - Image à découper
+    - Image de mode
  - Image de presse
  - Image d'Épinal
  - Image publicitaire

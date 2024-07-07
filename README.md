@@ -65,7 +65,7 @@ Un référentiel dédié existe pour les cartes et plans (zone [647](https://www
     - Image d'Épinal
     - Image publicitaire
     - Image religieuse 
-- **Jeu** (album de jeux pour enfants, album à colorier, jeu de l'oie, puzzle, rébus, mots-croisés...)
+- **Jeu** (abécédaire, album de jeux pour enfants, album à colorier, jeu de l'oie, puzzle, rébus, mots-croisés...)
 - **Maquette** (à découper, de reliure, de décor, de costume...)
 - **Menu** (de restaurant)
 - **Ornement** (typographique, gravé)
@@ -75,9 +75,61 @@ Un référentiel dédié existe pour les cartes et plans (zone [647](https://www
 - **Partition illustrée**
 - **Tableau** (au sens d'illustration dans un document imprimé)
 - **Autres**
+- Annonce d'éditeur
+Assignat
+Autocollant
+Bon d'échange
+Bon point
+Brevet
+Bulletin de paie
+Canard
+Cartouche
+Certificat
+Cocarde
+Décalcomanie
+Dessus de boîte
+Dessus de bouton
+Diplôme
+Domino
+Écran
+Ephemera (publication)
+Feuille d'imposition
+Frontispice
+Kakémono
+Kamishibaï
+Laissez-passer
+Livre animé
+Livre d'artiste
+Macédoine
+Marque typographique
+Marque-page
+Matériel didactique
+Modèle (architecture)
+Panneau décoratif
+Panneau didactique
+Papier à en-tête
+Papier à lettres
+Papier d'emballage
+Passeport
+Placard
+Placard de thèse
+portfolio
+Programme
+Prospectus
+relevé (archéologie)
+Sac
+Timbre d'artiste
+Timbre-poste
+Tract
+Vignette
+vue d'optique
+Vue d'optique
+vue stéréoscopique
+Vue stéréoscopique
 
 _Notes_ : 
 - les sous-types de la catégorie _image_ doivent être mobilisés selon les genres documentaire à traiter. 
 - Selon les contextes, des sous-catégories peuvent être considérées comme d'importance et valorisées en tant que type (par exemple les mots-croisés dans les collections de périodiques).
+- les sous-types de la catégorie _autres_ ne seront pas considérées.
 
 

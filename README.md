@@ -32,7 +32,49 @@ Dans le contexte du projet Gallica Images, les catégories à inférer par un mo
 - **peinture**
 - **photographie**
 
-Note : 
+Il faut noter que les techniques d'impression photomécanique et photographique ont la capacité à reproduire tous les documents iconographiques : 
+- photographie d'une peinture : technique = photographie / fonction = reproduction photographique d'une peinture
+- impression d'une peinture dans un livre d'art : technique = impression photomécanique / fonction = reproduction photomécanique d'une peinture
 
-### 2. Fonction
+### 2. Forme ou fonction
+
+Certains documents iconographiques appartiennent à un type lorsqu’ils ont une fonction particulière. Cf. zone d'indexation [646](https://www.bnf.fr/sites/default/files/2018-11/intermarc_ref_if-typo-img.pdf) ("Typologie des images") du format INTERMARC-B (sous-zone $a).
+
+Un référentiel dédié existe pour les cartes et plans (zone [647](https://www.bnf.fr/sites/default/files/2018-11/DocCart_Typo%2C0.pdf).
+
+- **Agenda
+- **Affiche (affiches, posters)
+- **Album (album ou portfolio de photographies, carte-album) 
+- **Bande dessinée
+- **Billet (de souscription, d'entrée...)
+- **Calendrier (calendrier, almanach, agenda...)
+- **Carte/faire-part (de visite, de voeux, d'invitation,  publicitaire, faire-part de mariage...)
+- **Carnet de dessins
+- **Carte (carte, globe...)
+- **Couverture (page de titre, couverture, faux-titre...)
+- **Carte à jouer
+- **Carte postale
+- **Croquis d'architecture (coupe, élévation, détail, profil...
+- **Étiquette
+- **Éventail
+- **Ex-libris
+- **Graphique (graphe, schéma technique...)
+- 
+- **Image
+- **Image de presse
+- **Illustration
+- 
+- **Jeu (album de jeux pour enfants, album à colorier, jeu de l'oie, puzzle, rébus, mots-croisés...)
+- **Maquette (à découper, de reliure, de décor, de costume...)
+- **Menu
+- **Ornement (typographique, gravé)
+- **Plan d'architecture (plan au sol, plan de masse, plan de situation...)
+- **Plan (plan de ville, plan parcellaire, plan cadastral...)
+- **Papier peint (échantillon de papier-peint)
+- **Partition illustrée
+- **Tableau 
+- **Autres
+
+Selon les contextes, des sous-catégories de type peuvent être considérées comme d'importance et valorisées en tant que type (par exemple les mots-croisés dans les collections de périodiques).
+
 

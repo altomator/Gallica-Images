@@ -74,17 +74,7 @@ Un référentiel dédié existe pour les cartes et plans (zone [647](https://www
 - **Papier-peint** (échantillon de papier-peint)
 - **Partition illustrée**
 - **Tableau** (au sens d'illustration dans un document imprimé)
-- **Autres**
-- Annonce d'éditeur
-Assignat
-Autocollant
-Bon d'échange
-Bon point
-Brevet
-Bulletin de paie
-Canard
-Cartouche
-Certificat
+- **Autres** (Annonce d'éditeur, Assignat, Autocollant, Bon d'échange, Bon point, Brevet, Bulletin de paie, Canard, Cartouche, Certificat
 Cocarde
 Décalcomanie
 Dessus de boîte
@@ -129,7 +119,7 @@ Vue stéréoscopique
 
 _Notes_ : 
 - les sous-types de la catégorie _image_ doivent être mobilisés selon les genres documentaire à traiter. 
-- Selon les contextes, des sous-catégories peuvent être considérées comme d'importance et valorisées en tant que type (par exemple les mots-croisés dans les collections de périodiques).
+- de même, selon les contextes, des sous-catégories peuvent être considérées comme d'importance et valorisées en tant que type (par exemple les mots-croisés dans les collections de périodiques).
 - les sous-types de la catégorie _autres_ ne seront pas considérées.
 
 

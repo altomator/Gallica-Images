@@ -42,39 +42,43 @@ Certains documents iconographiques appartiennent à un type lorsqu’ils ont une
 
 Un référentiel dédié existe pour les cartes et plans (zone [647](https://www.bnf.fr/sites/default/files/2018-11/DocCart_Typo%2C0.pdf).
 
-- **Agenda
-- **Affiche (affiches, posters)
-- **Album (album ou portfolio de photographies, carte-album) 
-- **Bande dessinée
-- **Billet (de souscription, d'entrée...)
-- **Calendrier (calendrier, almanach, agenda...)
-- **Carte/faire-part (de visite, de voeux, d'invitation,  publicitaire, faire-part de mariage...)
-- **Carnet de dessins
-- **Carte (carte, globe...)
-- **Couverture (page de titre, couverture, faux-titre...)
-- **Carte à jouer
-- **Carte postale
-- **Croquis d'architecture (coupe, élévation, détail, profil...
-- **Étiquette
-- **Éventail
-- **Ex-libris
-- **Graphique (graphe, schéma technique...)
-- 
-- **Image
-- **Image de presse
-- **Illustration
-- 
-- **Jeu (album de jeux pour enfants, album à colorier, jeu de l'oie, puzzle, rébus, mots-croisés...)
-- **Maquette (à découper, de reliure, de décor, de costume...)
-- **Menu
-- **Ornement (typographique, gravé)
-- **Plan d'architecture (plan au sol, plan de masse, plan de situation...)
-- **Plan (plan de ville, plan parcellaire, plan cadastral...)
-- **Papier peint (échantillon de papier-peint)
-- **Partition illustrée
-- **Tableau 
-- **Autres
+- **Affiche** (affiches, posters)
+- **Album** (album ou portfolio de photographies, carte-album) — relève plutôt du niveau du document
+- **Bande dessinée**
+- **Billet** (de souscription, d'entrée...)
+- **Calendrier** (calendrier, almanach, agenda...)
+- **Carte/faire-part** (de visite, de voeux, d'invitation,  publicitaire, faire-part de mariage...)
+- **Carnet de dessins** — relève plutôt du niveau du document
+- **Carte** (carte, globe...)
+- **Couverture** (page de titre, couverture, faux-titre...)
+- **Carte à jouer**
+- **Carte postale**
+- **Croquis d'architecture** (coupe, élévation, détail, profil...
+- **Étiquette**
+- **Éventail**
+- **Ex-libris**
+- **Graphique** (graphe, schéma technique...)
+- **Image**
+-- Image à découper
+- Image de mode
+- Image de presse
+- Image d'Épinal
+- Image publicitaire
+- Image religieuse 
 
-Selon les contextes, des sous-catégories de type peuvent être considérées comme d'importance et valorisées en tant que type (par exemple les mots-croisés dans les collections de périodiques).
+- **Jeu** (album de jeux pour enfants, album à colorier, jeu de l'oie, puzzle, rébus, mots-croisés...)
+- **Maquette** (à découper, de reliure, de décor, de costume...)
+- **Menu** (de restaurant)
+- **Ornement** (typographique, gravé)
+- **Plan d'architecture** (plan au sol, plan de masse, plan de situation...)
+- **Plan** (plan de ville, plan parcellaire, plan cadastral...)
+- **Papier-peint** (échantillon de papier-peint)
+- **Partition illustrée**
+- **Tableau** (au sens d'illustration dans un document imprimé)
+- **Autres**
+
+Notes : 
+- les sous-types de la catégorie _image_ doivent être mobilisés selon les genres documentaire à traiter. 
+- Selon les contextes, des sous-catégories peuvent être considérées comme d'importance et valorisées en tant que type (par exemple les mots-croisés dans les collections de périodiques).
 
 

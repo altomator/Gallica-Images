@@ -78,8 +78,30 @@ Un référentiel dédié existe pour les cartes et plans (zone [647](https://www
 
 _Notes_ : 
 - Les sous-types de la catégorie _image_ doivent être mobilisés selon les genres documentaire à traiter. 
-- De même, selon les contextes, des sous-catégories peuvent être considérées comme d'importance et valorisées en tant que type (par exemple les mots-croisés dans les collections de périodiques).
+- De même, selon les contextes, des sous-catégories peuvent être considérées comme d'importance et valorisées en tant que type (par exemple les mots-croisés et les images publicitaires dans les collections de périodiques).
 - Les sous-types de la catégorie _autres_ ne seront pas considérés.
 
 ### 3. Genre
+
+Le genre caractérise les œuvres littéraires ou artistiques (genre musical, genre littéraire, genre iconographique, genre cinématographique).
+
+Le [référentiel](https://www.bnf.fr/sites/default/files/2018-11/intermarc_ref_if-icono.pdf) s'applique dans la zone d'indexation [641](https://multimedia-ext.bnf.fr/pdf/pb-RIMB14_641.pdf) ("genre iconographique") du format INTERMARC-B (sous-zone $a).
+
+
+- **Caricatures et dessins humoristiques**
+- **Costumes**
+- **Décoration et ornement** (Décoration et ornement architecturaux, Décoration intérieure, Motifs décoratifs)
+- **Études et recherches**
+- **Paysages** (Paysages abstraits, de mer, de montagne, industriels, symboliques, urbains)
+- **Représentations animalières**
+- **Représentations humaines / Figures** (Figures allégoriques, bibliques, d'anatomie, érotiques, humoristiques, mythologiques, parodiques, satiriques; Silhouettes; Nus)
+- **Représentations humaines / Portraits** (Autoportraits, humoristiques, nus, symboliques, à l'antique, abstraits, allégoriques, après décès; Portraits armoriés, collectifs, d'apparat, de plein air, de studio, d'intérieur, d'intérieur avec décor, du cinéma, du théâtre, en camée, en médaillon, équestres, érotiques, humoristiques, insolites, parodiques, satiriques, symboliques)
+- **Représentations humaines / Scènes** (Scènes allégoriques, bibliques, cinématographiques, de genre, de moeurs, de rue, érotiques, fantastiques, galantes, historiques, humoristiques, insolites, légendaires, littéraires, musicales, mythologiques, parodiques, religieuses, satiriques, symboliques, théâtrales; Tableaux vivants et mises en scène; Types ethnographiques ou sociaux)
+- **Représentations d'objet** (Représentations d'objet humoristiques, insolites, symboliques, héraldiques, minérales)
+- **Représentations scientifiques et techniques**
+- **Représentations non figuratives** (compositions abstraites)
+- **Représentations végétales**
+- **Vanités, Natures mortes**
+- **Vues aériennes** (Vues à vol d'oiseau, Vues aériennes)
+- **Vues d'architecture** (Vues d'intérieur, panoramiques, perspectives)
 

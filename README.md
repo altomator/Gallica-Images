@@ -85,8 +85,9 @@ _Notes_ :
 
 Le genre caractérise les œuvres littéraires ou artistiques (genre musical, genre littéraire, genre iconographique, genre cinématographique).
 
-Le [référentiel](https://www.bnf.fr/sites/default/files/2018-11/intermarc_ref_if-icono.pdf) s'applique dans la zone d'indexation [641](https://multimedia-ext.bnf.fr/pdf/pb-RIMB14_641.pdf) ("genre iconographique") du format INTERMARC-B (sous-zone $a).
+Le [référentiel](https://www.bnf.fr/sites/default/files/2018-11/intermarc_ref_if-icono.pdf) "genre iconographique" s'applique dans la zone d'indexation [641](https://multimedia-ext.bnf.fr/pdf/pb-RIMB14_641.pdf) du format INTERMARC-B (sous-zone $a).
 
+Il est proche du [thésaurus Garnier](https://www.culture.gouv.fr/Thematiques/Musees/Pour-les-professionnels/Conserver-et-gerer-les-collections/Informatiser-les-collections-d-un-musee-de-France/Vocabulaires-scientifiques-du-Service-des-musees-de-France/Thesaurus-iconographique-systeme-descriptif-des-representations-de-Francois-Garnier).
 
 - **Caricatures et dessins humoristiques**
 - **Costumes**

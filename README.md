@@ -102,6 +102,6 @@ Le [référentiel](https://www.bnf.fr/sites/default/files/2018-11/intermarc_ref_
 - **Représentations non figuratives** (compositions abstraites)
 - **Représentations végétales**
 - **Vanités, Natures mortes**
-- **Vues aériennes** (Vues à vol d'oiseau, Vues aériennes)
+- **Vues aériennes** (Vues à vol d'oiseau, aériennes)
 - **Vues d'architecture** (Vues d'intérieur, panoramiques, perspectives)
 

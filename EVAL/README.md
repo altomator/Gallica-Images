@@ -26,13 +26,13 @@ Elles portent sur :
 2. Dans le dossier de travail Python, créer un sous-dossier nommé d'après le dataset, par exemple :
 
 ```
-> mkdir set_monos
-> cd set_monos
+> mkdir SET1
+> cd SET1
 ```
 
 Y copier l'export JSON : 
 ```
-> cp mon_path/export.json ./dataset_LS_monos.json
+> cp mon_path/export.json ./dataset_LS.json
 ```
 
 ## Contrôle de la segmentation 
@@ -41,7 +41,7 @@ Y copier l'export JSON :
 
 1. Extraire du fichier .json les URL des pages qui ont été annotées dans Label Studio :
 
-> grep "iiif" dataset_LS_monos.json > liste_pages.txt
+> grep "iiif" dataset_LS.json > liste_pages.txt
 
 Editer le fichier pour aboutir à un format ark-vue :
 ```
@@ -62,7 +62,7 @@ btv1b103365581-f21
 
 ```
 cd ..
-python3 extract_illustrations.py set_monos
+python3 extract_illustrations.py SET1
 ```
 
 Ce script produit : 
@@ -85,16 +85,16 @@ Ce script annote également les images des pages annotées (dossier GT_PAGES) av
 
 6. Avec le script get_response.py, extraire les données de la base Gallica Image relatives aux pages de la vérité terrain :
 
-> python3 get_response.py set_monos
+> python3 get_response.py SET1
 
-Ce script est à lancer depuis la BnF, avec en entrée la liste des pages annotées (set_monos/liste_pages.txt). Il produit : 
+Ce script est à lancer depuis la BnF, avec en entrée la liste des pages annotées (SET1/liste_pages.txt). Il produit : 
    - une réponse JSON par document Gallica
    - stockée dans le dossier du dataset, dans un sous-dossier DATA_db
 
 
 7. Avec le script extract_response.py, exploiter les données de la base Gallica Image stockées dans DATA_db :
 
-> python3 extract_response.py set_monos
+> python3 extract_response.py SET1
 
 Ce script produit : 
  - un fichier .txt par illustration de la base (classe, confiance, bbox), dans un dossier DATA_detect

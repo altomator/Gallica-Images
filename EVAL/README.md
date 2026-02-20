@@ -121,10 +121,31 @@ Ce script est à lancer depuis le réseau BnF. Il lit la liste des pages annoté
 > python3 extract_response.py SET1
 
 Ce script produit : 
- - un fichier .txt par illustration de la base (classe, confiance, bbox), stocké dans un dossier `DATA_detect`,
+ - un fichier .txt par illustration au format Pascalvoc (classe, confiance, bbox, ARK de l'illustration), stocké dans un dossier `DATA_detect`,
 - un fichier JSON par page incluant les données de classification et l'OCR, dans un dossier `DATA_ocr`
- - une vignette par illustration (optionnel), dans un dossier `ILL`.
+- une vignette par illustration (optionnel), dans un dossier `ILL`.
 
+Exemple du format JSON :
+```
+{
+"doc_ark": "btv1b8432868v",
+"page": "7",
+"title": "Sampigny sous les obus",
+"ills":[
+{
+    "ark": "bfkfk1g8nbv",
+    "technic": "photographie",
+    "function": "Carte_postale",
+    "genre": "N/A",
+    "rotation": "0",
+    "content_section": "N/A",
+    "content_text": "N/A",
+    "context_text_before": "G107112",
+    "context_text_after": "N/A"
+}
+]
+}
+```
 Ce script annote également les images des pages (dossier `GT_PAGES`) avec les boîtes englobantes des détections (en rouge).
 
 A ce stade, le dossier de travail doit être conforme à :

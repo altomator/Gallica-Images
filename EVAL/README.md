@@ -63,7 +63,7 @@ btv1b103365581-f21
 
 ```
 cd ..
-python3 extract_illustrations.py SET1
+python3 extract_illustrations.py SET1 --iiif
 ```
 
 Ce script produit : 
@@ -91,7 +91,7 @@ Ce script annote également les images des pages annotées (dossier `GT_PAGES`) 
 
 > python3 get_response.py SET1
 
-Ce script est à lancer depuis le réseau BnF, avec en entrée la liste des pages annotées (SET1/liste_pages.txt). Il produit : 
+Ce script est à lancer depuis le réseau BnF. Il lit la liste des pages annotées (`SET1/liste_pages.txt`) et produit : 
    - une réponse JSON par document Gallica,
    - stockée dans le dossier du dataset, dans un sous-dossier `DATA_db`.
 

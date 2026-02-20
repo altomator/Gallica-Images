@@ -134,6 +134,7 @@ Exemple du format JSON :
 "ills":[
 {
     "ark": "bfkfk28zc4k",
+    "bbox": "39.5065,18.8601,21.5103,23.4205",
     "technic": "photographie",
     "function": "Carte_postale",
     "genre": "Repr\u00e9sentations_humaines_/_Portraits",

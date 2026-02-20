@@ -121,8 +121,8 @@ Ce script est à lancer depuis le réseau BnF. Il lit la liste des pages annoté
 > python3 extract_response.py SET1
 
 Ce script produit : 
- - un fichier .txt par illustration au format Pascalvoc (classe, confiance, bbox, ARK de l'illustration), stocké dans un dossier `DATA_detect`,
-- un fichier JSON par page incluant les données de classification et l'OCR, dans un dossier `DATA_ocr`
+ - un fichier .txt par page au format Pascalvoc (classe, confiance, bbox, ARK de l'illustration), stocké dans un dossier `DATA_detect`,
+- un fichier JSON par page incluant les principales métadonnées et les textes océrisés, dans un dossier `DATA_ocr`,
 - une vignette par illustration (optionnel), dans un dossier `ILL`.
 
 Exemple du format JSON :

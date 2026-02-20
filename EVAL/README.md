@@ -10,7 +10,8 @@
 
 ## Contexte
 
-Mesure de la qualité
+Mesure de la qualité des modèles d'IA entraînés dans le cadre du projet Gallica Images.
+
 
 ## Vérité terrain
 
@@ -19,6 +20,11 @@ Elles portent sur :
 - la localisation de l'illustration dans la page scannée,
 - le type de l'illustration : dessin, photo, etc.,
 - la rotation éventuelle de l'illustration.
+
+Plusieurs datasets Labe Studio sont disponibles dans le dossier [DATASETS](), organisés par type documentaire :
+- photographie
+- dessin
+- estampe
 
 
 1. Exporter au format JSON le dataset depuis [LabelStudio](https://labelstud.io/guide/export).

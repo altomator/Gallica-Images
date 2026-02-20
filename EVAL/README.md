@@ -88,6 +88,11 @@ btv1b103365581;[Recueil. Portraits d'Aristide Briand];2;8.38,5.28,82.23,70.71,0,
 ...
 ```
 
+Dans le cas d'une page contenant plusieurs illustrations : 
+```
+btv1b8432385n;Una visita al fronte italiano : Maggio 1916;6;39.38,18.94,21.4,23.37,0,photographie,19.02,52.77,21.66,23.23,0,photographie,57.74,53.07,21.6,23.58,0,photographie,
+```
+
 Exemple Pascalvoc pour le fichier `btv1b103365581-1.txt` :
 ```
 photographie 0.0906 0.06280000000000001 0.8204 0.6947

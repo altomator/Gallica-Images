@@ -128,23 +128,22 @@ Ce script produit :
 Exemple du format JSON :
 ```
 {
-"doc_ark": "btv1b8432868v",
-"page": "7",
-"title": "Sampigny sous les obus",
+"doc_ark": "btv1b8432385n",
+"page": "6",
+"title": "Una visita al fronte italiano : Maggio 1916",
 "ills":[
 {
-    "ark": "bfkfk1g8nbv",
+    "ark": "bfkfk28zc4k",
     "technic": "photographie",
     "function": "Carte_postale",
-    "genre": "N/A",
+    "genre": "Repr\u00e9sentations_humaines_/_Portraits",
     "rotation": "0",
     "content_section": "N/A",
     "content_text": "N/A",
-    "context_text_before": "G107112",
+    "context_text_before": "N/A",
     "context_text_after": "N/A"
-}
-]
-}
+},
+{...
 ```
 Ce script annote également les images des pages (dossier `GT_PAGES`) avec les boîtes englobantes des détections (en rouge).
 

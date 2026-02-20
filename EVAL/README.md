@@ -24,12 +24,16 @@ Elles portent sur :
 
 
 2. Dans le dossier de travail Python, créer un sous-dossier nommé d'après le dataset, par exemple :
+
+```
 > mkdir set_monos
 > cd set_monos
+```
 
 Y copier l'export JSON : 
+```
 > cp path/export.json ./dataset_LS_monos.json
-
+```
 ## Segmentation 
 
 

@@ -81,6 +81,7 @@ btv1b103365581;[Recueil. Portraits d'Aristide Briand];2;8.38,5.28,82.23,70.71,0,
 
 Ce script annote également les images des pages annotées (dossier GT_PAGES) avec les boîtes englobantes (en vert) des illustrations de la vérité terrain.
 
+![Image annotée](https://github.com/altomator/Gallica-Images/blob/main/img/page.png "Page annotée")
 
 
 6. Avec le script get_response.py, extraire les données de la base Gallica Image relatives aux pages de la vérité terrain :

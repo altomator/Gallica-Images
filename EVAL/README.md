@@ -72,12 +72,14 @@ Ce script produit :
 - les mêmes données au format Pascalvoc pour chaque illustration, dans un sous-dossier DATA_gt (fichiers nommés ark-vue.txt)
 
 Exemple GT.csv : 
+```
 ARK,Title,Vue Number,BBOX (%),Rotation,Label
 btv1b103365581;[Recueil. Portraits d'Aristide Briand];1;9.06,6.28,82.04,69.47,0,photographie,
 btv1b103365581;[Recueil. Portraits d'Aristide Briand];13;21.43,16.12,57.66,52.78,0,photographie,
 btv1b103365581;[Recueil. Portraits d'Aristide Briand];17;1.98,1.67,94.27,81.0,0,photographie,
 btv1b103365581;[Recueil. Portraits d'Aristide Briand];2;8.38,5.28,82.23,70.71,0,photographie,
 ...
+```
 
 Ce script annote également les images des pages annotées (dossier GT_PAGES) avec les boîtes englobantes (en vert) des illustrations de la vérité terrain.
 

@@ -122,6 +122,7 @@ Ce script est à lancer depuis le réseau BnF. Il lit la liste des pages annoté
 
 Ce script produit : 
  - un fichier .txt par illustration de la base (classe, confiance, bbox), stocké dans un dossier `DATA_detect`,
+- un fichier JSON par page incluant les données de classification et l'OCR, dans un dossier `DATA_ocr`
  - une vignette par illustration (optionnel), dans un dossier `ILL`.
 
 Ce script annote également les images des pages (dossier `GT_PAGES`) avec les boîtes englobantes des détections (en rouge).

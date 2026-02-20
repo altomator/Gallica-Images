@@ -110,7 +110,7 @@ Ce script produit :
  - un fichier .txt par illustration de la base (classe, confiance, bbox), stocké dans un dossier `DATA_detect`,
  - une vignette par illustration (optionnel), dans un dossier `ILL`.
 
-Ce script annote également les images des pages (dossier GT_PAGES) avec les boîtes englobantes (en rouge).
+Ce script annote également les images des pages (dossier `GT_PAGES`) avec les boîtes englobantes des détections (en rouge).
 
 A ce stade, le dossier de travail doit être conforme à :
 ![Image annotée](https://github.com/altomator/Gallica-Images/blob/main/img/dossier.png "Dossier de travail")

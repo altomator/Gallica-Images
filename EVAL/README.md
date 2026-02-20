@@ -78,6 +78,8 @@ Ce script produit :
 - données CSV pour chaque illustration (ark, titre du document, n° de vue, bounding box, rotation, type de l'illustration) enregistrées dans un fichier `GT.csv`. 
 - les mêmes données au format Pascalvoc pour chaque illustration, dans un sous-dossier `DATA_gt` (fichiers nommés ark-vue.txt)
 
+Note : les boîtes sont exprimées en valeur relative (% des dimensions de la page).
+
 Exemple `GT.csv` : 
 ```
 ARK,Title,Vue Number,BBOX (%),Rotation,Label

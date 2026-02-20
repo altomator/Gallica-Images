@@ -35,7 +35,9 @@ Y copier l'export JSON :
 > cp mon_path/export.json ./dataset_LS_monos.json
 ```
 
-## Segmentation 
+## Contrôle de la segmentation 
+
+### Préparation des données 
 
 1. Extraire du fichier .json les URL des pages qui ont été annotées dans Label Studio :
 
@@ -48,19 +50,63 @@ btv1b103365581-f13
 btv1b103365581-f17
 btv1b103365581-f2
 btv1b103365581-f21
-btv1b103365581-f31
-btv1b103365581-f32
+...
 ```
 
 
-4. Si besoin, filtrer les pages à exclure (pages déjà utilisées par LJN pour de l'entrainement) avec un tableau Excel fourni par LJN
+4. Si besoin, filtrer les pages à exclure (pages déjà utilisées pour l'apprentissage).
 
 
 5. Avec le script extract_illustrations.py, extraire les données de la vérité terrain
-(ground truth) du dataset LabelStudio .json et de la liste filtrée :
+(_ground truth_) du dataset LabelStudio et de la liste filtrée :
 
-> cd ..
-> python3 extract_illustrations.py set_monos
+```
+cd ..
+python3 extract_illustrations.py set_monos
+```
+
+Ce script produit : 
+- images des pages annotées avec l'API IIIF (optionnel) : dossier GT_PAGES
+- vignettes des illustrations annotées avec l'API IIIF (optionnel) : dossier GT_ILLUSTRATIONS, avec des sous-dossiers par type
+- données CSV pour chaque illustration (ark, titre du document, n° de vue, bounding box, rotation, type de l'illustration) enregistrées dans un fichier GT.csv. 
+- les mêmes données au format Pascalvoc pour chaque illustration, dans un sous-dossier DATA_gt (fichiers nommés ark-vue.txt)
+
+Exemple GT.csv : 
+ARK,Title,Vue Number,BBOX (%),Rotation,Label
+btv1b103365581;[Recueil. Portraits d'Aristide Briand];1;9.06,6.28,82.04,69.47,0,photographie,
+btv1b103365581;[Recueil. Portraits d'Aristide Briand];13;21.43,16.12,57.66,52.78,0,photographie,
+btv1b103365581;[Recueil. Portraits d'Aristide Briand];17;1.98,1.67,94.27,81.0,0,photographie,
+btv1b103365581;[Recueil. Portraits d'Aristide Briand];2;8.38,5.28,82.23,70.71,0,photographie,
+...
+
+Ce script annote également les images des pages annotées (dossier GT_PAGES) avec les boîtes englobantes (en vert) des illustrations de la vérité terrain.
+
+
+
+6. Avec le script get_response.py, extraire les données de la base Gallica Image relatives aux pages de la vérité terrain :
+
+> python3 get_response.py set_monos
+
+Ce script est à lancer depuis la BnF, avec en entrée la liste des pages annotées (set_monos/liste_pages.txt). Il produit : 
+   - une réponse JSON par document Gallica
+   - stockée dans le dossier du dataset, dans un sous-dossier DATA_db
+
+
+7. Avec le script extract_response.py, exploiter les données de la base Gallica Image stockées dans DATA_db :
+
+> python3 extract_response.py set_monos
+
+Ce script produit : 
+ - un fichier .txt par illustration de la base (classe, confiance, bbox), dans un dossier DATA_detect
+ - une vignette par illustration (optionnel), dans un dossier ILL
+
+Ce script annote également les images des pages (dossier GT_PAGES) avec les boîtes englobantes (en rouge).
+
+A ce stade, le dossier de travail doit être conforme à :
+
+### Calcul des métriques
+
+
 
 ## Divers
 

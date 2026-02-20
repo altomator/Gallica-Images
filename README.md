@@ -16,6 +16,8 @@ Voir cette [section](https://github.com/altomator/Gallica-Images/tree/main/MDD)
 
 ## Evaluation 
 
+Voir cette [section](https://github.com/altomator/Gallica-Images/tree/main/EVAL)
+
 
 ## Divers
 

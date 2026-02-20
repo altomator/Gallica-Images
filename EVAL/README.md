@@ -93,10 +93,11 @@ Dans le cas d'une page contenant plusieurs illustrations :
 btv1b8432385n;Una visita al fronte italiano : Maggio 1916;6;39.38,18.94,21.4,23.37,0,photographie,19.02,52.77,21.66,23.23,0,photographie,57.74,53.07,21.6,23.58,0,photographie,
 ```
 
-Exemple Pascalvoc pour le fichier `btv1b103365581-1.txt` :
+Exemple Pascalvoc pour le fichier `btv1b103365581-6.txt` :
 ```
-photographie 0.0906 0.06280000000000001 0.8204 0.6947
-
+photographie 0.39380000000000004 0.1894 0.214 0.23370000000000002
+photographie 0.1902 0.5277000000000001 0.21660000000000001 0.2323
+photographie 0.5774 0.5307 0.21600000000000003 0.23579999999999998
 ```
 
 Ce script annote également les images des pages annotées (dossier `GT_PAGES`) avec les boîtes englobantes (en vert) des illustrations de la vérité terrain.

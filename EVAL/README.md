@@ -43,7 +43,7 @@ Y copier l'export JSON :
 
 > grep "iiif" dataset_LS.json > liste_pages.txt
 
-Editer le fichier pour aboutir à un format ark-vue :
+Editer le fichier pour aboutir à un format `ark-vue` :
 ```
 btv1b103365581-f1
 btv1b103365581-f13

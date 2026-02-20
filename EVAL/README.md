@@ -101,8 +101,8 @@ Ce script est à lancer depuis le réseau BnF, avec en entrée la liste des page
 > python3 extract_response.py SET1
 
 Ce script produit : 
- - un fichier .txt par illustration de la base (classe, confiance, bbox), stocké dans un dossier `DATA_detect
- - une vignette par illustration (optionnel), dans un dossier `ILL`
+ - un fichier .txt par illustration de la base (classe, confiance, bbox), stocké dans un dossier `DATA_detect`,
+ - une vignette par illustration (optionnel), dans un dossier `ILL`.
 
 Ce script annote également les images des pages (dossier GT_PAGES) avec les boîtes englobantes (en rouge).
 

@@ -175,7 +175,8 @@ Appeler le script ([source](https://github.com/eypros/Object-Detection-Metrics/t
 
   
 ```
-python pascalvoc.py --accepted-classes photographie --gt-coords rel --det-coords rel --gt-format xywh --det-format xywh --img-size 800,800 --threshold 0.75
+python pascalvoc.py --accepted-classes photographie --gt-coords rel --det-coords rel --gt-format xywh --det-format xywh --img-size 800,800 --threshold 0.75 --gt-folder DATA_gt --det-folder DATA_detect
+
 ```
 
 Le script calcule la courbe AP et la valeur de la précision moyenne (la précision moyenne est l'aire sous la courbe précision-rappel d'un détecteur d'objets pour une classe donnée).

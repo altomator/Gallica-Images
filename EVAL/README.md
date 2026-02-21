@@ -21,10 +21,10 @@ Elles portent sur :
 - le type de l'illustration : dessin, photo, etc.,
 - la rotation éventuelle de l'illustration.
 
-Plusieurs datasets Labe Studio sont disponibles dans le dossier [DATASETS](), organisés par type documentaire :
-- photographie
-- dessin
-- estampe
+Plusieurs datasets Label Studio sont disponibles dans le dossier [DATASETS](), organisés par type documentaire :
+- photographie,
+- dessin,
+- estampe.
 
 
 1. Exporter au format JSON le dataset depuis [LabelStudio](https://labelstud.io/guide/export).
@@ -42,9 +42,11 @@ Y copier l'export JSON sous le nom `dataset_LS.json` :
 > cp mon_path/export.json ./dataset_LS.json
 ```
 
-## Contrôle de la segmentation 
+## Evaluation quantitative
 
-### Préparation des données 
+### Contrôle de la segmentation 
+
+#### 1. Préparation des données 
 
 1. Extraire du fichier .json les URL des pages qui ont été annotées dans Label Studio :
 
@@ -153,9 +155,14 @@ A ce stade, le dossier de travail doit être conforme à :
 ![Image annotée](https://github.com/altomator/Gallica-Images/blob/main/img/dossier.png "Dossier de travail")
 
 
-### Calcul des métriques
+#### 2. Calcul des métriques
+
+### Contrôle de la rotation 
 
 
+## Evaluation qualitative
+
+### Avec Panoptic
 
 ## Divers
 

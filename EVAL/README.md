@@ -157,7 +157,29 @@ A ce stade, le dossier de travail doit être conforme à :
 
 #### 2. Calcul des métriques
 
+1. Recopier les dossiers DATA_gt et DATA_detect dans le dossier de calcul des métriques.
+
+
+9. Harmoniser les fichiers :
+
+```
+> python clean.py
+```
+
+10. Calculer les métriques : 
+
+```
+python pascalvoc.py --accepted-classes person --gt-coords rel --dect-coords rel --img-size 500,500
+```
+
+
 ### Contrôle de la rotation 
+
+### Contrôle des classifications (technique, fonction, genre)
+
+### Contrôle de l'OCR
+
+
 
 
 ## Evaluation qualitative

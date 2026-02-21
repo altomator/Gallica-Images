@@ -3,8 +3,10 @@
 **Plan** : 
 
 - [*Contexte*](#Contexte)
-- [*Evaluation*](#evaluation)
-- 
+- [*Vérité terrain*](#Contexte)
+- [*Evaluation quantitative*](#evaluation)
+- [*Evaluation qualitative*](#evaluation)
+
 
 ***
 
@@ -152,25 +154,34 @@ Ce script annote également les images des pages (dossier `GT_PAGES`) avec les b
 
 A ce stade, le dossier de travail doit être conforme à :
 
-![Image annotée](https://github.com/altomator/Gallica-Images/blob/main/img/dossier.png "Dossier de travail")
+![Dossier](https://github.com/altomator/Gallica-Images/blob/main/img/dossier.png "Dossier de travail")
 
 
 #### 2. Calcul des métriques
 
-1. Recopier les dossiers DATA_gt et DATA_detect dans le dossier de calcul des métriques.
-
+1. Recopier les dossiers `DATA_gt` et `DATA_detect` dans le dossier de calcul des métriques `SegMetric`, en les renommant respectivement `detections-txt`et `groundtruths-txt`.
 
 9. Harmoniser les fichiers :
 
 ```
-> python clean.py
+> python clean_files.py
 ```
 
 10. Calculer les métriques : 
 
+Appeler le script ([source](https://github.com/eypros/Object-Detection-Metrics/tree/master)) avec les paramètres suivants :
+- la technique principale du dataset, par exemple ci-dessous `photographie`,
+- le seuil de détection IoU (0.5 par défaut)
+
+  
 ```
-python pascalvoc.py --accepted-classes person --gt-coords rel --dect-coords rel --img-size 500,500
+python pascalvoc.py --accepted-classes photographie --gt-coords rel --det-coords rel --gt-format xywh --det-format xywh --img-size 800,800 --threshold 0.75
 ```
+
+Le script calcule la courbe AP et la valeur de la précision moyenne (la précision moyenne est l'aire sous la courbe précision-rappel d'un détecteur d'objets pour une classe).
+
+![Courbe AP](https://github.com/altomator/Gallica-Images/blob/main/img/AP.png "Courbe AP")
+
 
 
 ### Contrôle de la rotation 

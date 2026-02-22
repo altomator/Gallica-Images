@@ -35,13 +35,13 @@ Plusieurs datasets Label Studio sont disponibles dans le dossier [DATASETS](), o
 2. Dans le dossier de travail Python, créer un sous-dossier nommé d'après le dataset, par exemple :
 
 ```
-> mkdir SET1
-> cd SET1
+mkdir SET1
+cd SET1
 ```
 
 Y copier l'export JSON sous le nom `dataset_LS.json` : 
 ```
-> cp mon_path/export.json ./dataset_LS.json
+cp mon_path/export.json ./dataset_LS.json
 ```
 
 ## Evaluation quantitative

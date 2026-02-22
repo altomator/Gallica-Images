@@ -4,7 +4,8 @@
 
 - [*Modèle de données*](#odèle-de-données)
 - [*Evaluation*](#evaluation)
-- 
+- [*Divers*](#divers)
+
 
 ***
 

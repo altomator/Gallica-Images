@@ -23,7 +23,7 @@ Elles portent sur :
 - le type de l'illustration : dessin, photo, etc.,
 - la rotation éventuelle de l'illustration.
 
-Plusieurs datasets Label Studio sont disponibles dans le dossier [DATASETS](), organisés par type documentaire :
+Plusieurs datasets Label Studio sont disponibles dans le dossier [DATASETS](https://github.com/altomator/Gallica-Images/tree/main/EVAL/DATASETS), organisés par type documentaire :
 - photographie,
 - dessin,
 - estampe.

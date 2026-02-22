@@ -215,10 +215,20 @@ Les classifications générées sont décrites dans les fichiers du dossier `DAT
 - fonction et genre de l'illustration,
 - éventuelle rotation de l'illustration.
 
-Afin de minimiser l'influence de la segmentation sur l'évaluation de ces données, on aligne la vérité terrain et les détections avec le script `align-BB.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/classification/align-BB.py.py)), puis on mesure sur les illustrations alignées.
+Afin de minimiser l'influence de la segmentation sur l'évaluation de ces données, on aligne au préalable la vérité terrain et les détections avec le script `align-BB.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/classification/align-BB.py.py)), puis on mesure sur les illustrations alignées.
 
 ```
 python align-BB.py DATA_gt DATA_det 0.75
+...
+...processing  btv1b8529846d-9 
+   found a match for:  bfkfk25r8x6 
+...saving aligned CSV for btv1b8529846d-9
+---------------------------------
+Number of files in GT: 633
+Number of BBox in GT: 1006
+Number of detected BBox: 996
+Number of matches: 953
+---------------------------------
 ```
 
 ### Contrôle de la rotation 

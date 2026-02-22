@@ -69,11 +69,14 @@ btv1b103365581-f21
 
 
 5. Avec le script `extract_illustrations.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/LabelStudio/extract_illustrations.py)), extraire les données de la vérité terrain
-(_ground truth_) du dataset LabelStudio et de la liste filtrée :
-
+(_ground truth_) du dataset LabelStudio et de la liste filtrée. Il dispose de deux options :
+- extraction des vignettes des pages et des illustrations avec l'API Gallica IIIF : `--iiif`
+- annotation des pages avec les boîtes englobantes des illustrations : `--annot`
+- facteur de taille de téléchargements des images IIIF (50% par défaut)
+  
 ```
 cd ..
-python3 extract_illustrations.py SET1 --iiif
+python3 extract_illustrations.py SET1 --iiif 25
 ```
 
 Ce script produit : 

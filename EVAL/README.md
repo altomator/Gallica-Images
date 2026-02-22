@@ -169,9 +169,9 @@ A ce stade, le dossier de travail doit être conforme à :
 
 10. Calculer les métriques : 
 
-L'objectif est d'aligner les segmentations (boîtes englobantes) entre la vérité terrain et les détections puis de mesurer :
+L'objectif est d'aligner les segmentations (boîtes englobantes) entre la vérité terrain et les détections puis de mesurer une métrique de recouvrement.
 
-Pour ce faire, le script calcule la moyenne des précisions moyennes de chaque classe (AP, _average precision_), en considérant une détection correcte si la valeur IoU (_intersection over union_) de recouvrement entre la vérité terrain et la boîte prédite est ≥ à un seuil donné et la classe est correcte (ici la technique). mAP@50 signifie donc _mean Average Precision_ pour un IoU de 0.50).
+Pour ce faire, le script calcule la moyenne (mAP) des précisions moyennes de chaque classe (AP, _average precision_), en considérant une détection correcte si la valeur IoU (_intersection over union_) de recouvrement entre la vérité terrain et la boîte prédite est ≥ à un seuil donné et la classe est correcte (ici la technique de l'illustration). mAP@50 signifie donc _mean Average Precision_ pour un IoU de 0.50.
 
 ![IoU](https://github.com/altomator/Gallica-Images/blob/main/img/iou.jpg "IoU")
 

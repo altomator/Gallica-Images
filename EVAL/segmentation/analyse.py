@@ -32,6 +32,14 @@ if __name__ == "__main__":
     print(gt_df['gt_rot'].value_counts())
     print(gt_df['det_rot'].value_counts())
 
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6))
+    gt_df['gt_rot'].value_counts().plot.pie(autopct='%1.1f%%', ax=ax1, title='Rotation (vérité terrain)')
+    gt_df['det_rot'].value_counts().plot.pie(autopct='%1.1f%%', ax=ax2, title='Rotation (détectées)')
+    ax1.set_ylabel('')
+    ax2.set_ylabel('')
+    plt.tight_layout()
+    plt.show()
+
     labels = sorted(gt_df['det_rot'].unique())
     cm = confusion_matrix(gt_df['gt_rot'], gt_df['det_rot'], labels=labels)
     print("Matrice de confusion : rotations réelles / détectées")
@@ -65,6 +73,14 @@ if __name__ == "__main__":
     print(f"Unique det_tech values: {gt_df['det_tech'].unique()}\n")
     print(gt_df['gt_tech'].value_counts())
     print(gt_df['det_tech'].value_counts())
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6))
+    gt_df['gt_tech'].value_counts().plot.pie(autopct='%1.1f%%', ax=ax1, title='Technique (vérité terrain)')
+    gt_df['det_tech'].value_counts().plot.pie(autopct='%1.1f%%', ax=ax2, title='Technique (détectées)')
+    ax1.set_ylabel('')
+    ax2.set_ylabel('')
+    plt.tight_layout()
+    plt.show()
 
     labels = sorted(gt_df['det_tech'].unique(), reverse=False)
     cm = confusion_matrix(gt_df['gt_tech'], gt_df['det_tech'], labels=labels)

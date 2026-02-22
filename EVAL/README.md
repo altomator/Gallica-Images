@@ -32,7 +32,7 @@ Plusieurs datasets Label Studio sont disponibles dans le dossier [DATASETS](), o
 1. Exporter au format JSON le dataset depuis [LabelStudio](https://labelstud.io/guide/export).
 
 
-2. Dans le dossier de travail Python, créer un sous-dossier nommé d'après le dataset, par exemple :
+2. Dans le dossier de travail LabelStudio, créer un sous-dossier nommé d'après le dataset, par exemple :
 
 ```
 mkdir SET1
@@ -76,8 +76,7 @@ btv1b103365581-f21
 - facteur de taille de téléchargement des images IIIF (30% par défaut)
   
 ```
-cd ..
-python3 extract_illustrations.py SET1 --iiif 25
+python extract_illustrations.py SET1 --iiif 25
 ```
 
 Ce script produit : 
@@ -170,18 +169,19 @@ Exemple du format JSON pour btv1b8432385n-6.json :
 {...
 ```
 
-A ce stade, le dossier de travail doit être conforme à :
+A ce stade, le dossier du dataset doit être conforme à :
 
 ![Dossier](https://github.com/altomator/Gallica-Images/blob/main/img/dossier.png "Dossier de travail")
 
 
 #### 2. Calcul des métriques
 
-1. Recopier les dossiers `DATA_gt` et `DATA_detect` dans le dossier de calcul des métriques `SegMetric`.
+1. Recopier les dossiers `DATA_gt` et `DATA_detect` dans le dossier de calcul des métriques `segmentation`.
 
 9. **Harmoniser** les fichiers (on doit obtenir le même nombre de fichiers dans chacun des deux dossiers) avec le script `clean_files.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/clean_files.py)) :
 
 ```
+cd segmentation
 python clean_files.py DATA_gt DATA_detect
 ```
 

@@ -68,7 +68,7 @@ btv1b103365581-f21
 4. Si besoin, filtrer les pages à exclure (pages déjà utilisées pour l'apprentissage).
 
 
-5. Avec le script `extract_illustrations.py`, extraire les données de la vérité terrain
+5. Avec le script `extract_illustrations.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/LabelStudio/extract_illustrations.py)), extraire les données de la vérité terrain
 (_ground truth_) du dataset LabelStudio et de la liste filtrée :
 
 ```
@@ -111,18 +111,20 @@ Ce script annote également les images des pages annotées (dossier `GT_PAGES`) 
 ![Image annotée](https://github.com/altomator/Gallica-Images/blob/main/img/page.png "Page annotée")
 
 
-6. Avec le script `get_response.py`, extraire les données de la base Gallica Image relatives aux pages de la vérité terrain :
-
-> python3 get_response.py SET1
-
+6. Avec le script `get_response.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/LabelStudio/get_response.py)), extraire les données de la base Gallica Image relatives aux pages de la vérité terrain :
+```
+python get_response.py SET1
+```
 Ce script est à lancer depuis le réseau BnF. Il lit la liste des pages annotées (`SET1/liste_pages.txt`) et produit : 
    - une réponse JSON par document Gallica,
    - stockée dans le dossier du dataset, dans un sous-dossier `DATA_db`.
 
 
-7. Avec le script `extract_response.py`, exploiter les données de la base Gallica Image stockées dans `DATA_db` :
+7. Avec le script `extract_response.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/LabelStudio/extract_response.py)), exploiter les données de la base Gallica Image stockées dans `DATA_db` :
 
-> python3 extract_response.py SET1
+```
+python extract_response.py SET1
+```
 
 Ce script produit : 
  - un fichier .txt par page au format Pascalvoc (classe, confiance, bbox, ARK de l'illustration), stocké dans un dossier `DATA_detect`,

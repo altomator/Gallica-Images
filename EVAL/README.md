@@ -163,10 +163,10 @@ A ce stade, le dossier de travail doit être conforme à :
 
 1. Recopier les dossiers `DATA_gt` et `DATA_detect` dans le dossier de calcul des métriques `SegMetric`.
 
-9. Harmoniser les fichiers (on doit obtenir le même nombre de fichiers dans chaque dossier) :
+9. Harmoniser les fichiers (on doit obtenir le même nombre de fichiers dans chacun des deux dossiers) :
 
 ```
-> python clean_files.py
+python clean_files.py
 ```
 
 10. Calculer les métriques : 
@@ -177,17 +177,17 @@ Pour ce faire, le script calcule la moyenne (mAP) des précisions moyennes de ch
 
 ![IoU](https://github.com/altomator/Gallica-Images/blob/main/img/iou.jpg "IoU")
 
-Installer localement les bibliothèques `lib` de ce [github](https://github.com/eypros/Object-Detection-Metrics/tree/master) puis appeler le script `analyseAP` ([source]()) avec les paramètres suivants :
+Installer localement les bibliothèques `lib` de ce [github](https://github.com/eypros/Object-Detection-Metrics/tree/master) puis appeler le script `analyse-AP.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/analyse-AP.py.py)) avec les paramètres suivants :
 - les techniques présentes dans le dataset,
 - le seuil de détection IoU (0.5 par défaut = permissif, 0.75 = strict).
   
 ```
-python analyseAP.py --accepted-classes photographie dessin estampe --gt-coords rel --det-coords rel --gt-format xywh --det-format xywh --img-size 800,800 --threshold 0.75 --gt-folder DATA_gt --det-folder DATA_detect
+python analyse-AP.py --accepted-classes photographie dessin estampe --gt-coords rel --det-coords rel --gt-format xywh --det-format xywh --img-size 800,800 --threshold 0.75 --gt-folder DATA_gt --det-folder DATA_detect
 ```
 
 Pour focaliser l'analyse sur la segmentation et non la segmentation + classification, demander l'analyse sur la classe principale du dataset :
 ```
-python analyseAP.py --accepted-classes photographie --gt-coords rel --det-coords rel --gt-format xywh --det-format xywh --img-size 800,800 --threshold 0.75 --gt-folder DATA_gt --det-folder DATA_detect
+python analyse-AP.py --accepted-classes photographie --gt-coords rel --det-coords rel --gt-format xywh --det-format xywh --img-size 800,800 --threshold 0.75 --gt-folder DATA_gt --det-folder DATA_detect
 ```
 
 Le script calcule la courbe AP et la valeur de la précision moyenne pour chaque classe (la précision moyenne est l'aire sous la courbe précision-rappel d'un détecteur d'objets pour une classe donnée) ainsi que la moyenne des moyennes.
@@ -202,6 +202,7 @@ mAP: 0.40460
 ```
 
 ### Contrôle des classifications (technique, fonction, genre)
+
 
 ### Contrôle de la rotation 
 

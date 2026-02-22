@@ -73,7 +73,7 @@ btv1b103365581-f21
 
 - extraction des vignettes des pages et des illustrations avec l'API Gallica IIIF : `--iiif`
 - annotation des pages avec les boîtes englobantes des illustrations : `--annot`
-- facteur de taille de téléchargement des images IIIF (50% par défaut)
+- facteur de taille de téléchargement des images IIIF (30% par défaut)
   
 ```
 cd ..
@@ -115,7 +115,8 @@ Ce script annote également les images des pages annotées (dossier `GT_PAGES`) 
 ![Image annotée](https://github.com/altomator/Gallica-Images/blob/main/img/page.png "Page annotée")
 
 
-6. Avec le script `get_response.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/LabelStudio/get_response.py)), extraire les données de la base Gallica Image relatives aux pages de la vérité terrain :
+6. Avec le script `get_response.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/LabelStudio/get_response.py)), extraire les données de la base Gallica Image relatives aux pages de la vérité terrain.
+   
 ```
 python get_response.py SET1
 ```
@@ -124,10 +125,15 @@ Ce script est à lancer depuis le réseau BnF. Il lit la liste des pages annoté
    - stockée dans le dossier du dataset, dans un sous-dossier `DATA_db`.
 
 
-7. Avec le script `extract_response.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/LabelStudio/extract_response.py)), exploiter les données de la base Gallica Image stockées dans `DATA_db` :
+7. Avec le script `extract_response.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/LabelStudio/extract_response.py)), exploiter les données de la base Gallica Image stockées dans `DATA_db`.
+
+Options : 
+- extraction des vignettes des illustrations avec l'API Gallica IIIF : `--iiif`
+- annotation des pages (dossier `GT_PAGES`) avec les boîtes englobantes des illustrations : `--annot`
+- facteur de taille de téléchargement des images IIIF (30% par défaut)
 
 ```
-python extract_response.py SET1
+python extract_response.py SET1 --iiif 25
 ```
 
 Ce script produit : 

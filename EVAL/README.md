@@ -65,7 +65,7 @@ btv1b103365581-f21
 ```
 
 
-4. Si besoin, filtrer les pages à exclure (pages déjà utilisées pour l'apprentissage).
+4. Si besoin, filtrer les pages à exclure (pages utilisées pour l'apprentissage).
 
 
 5. Avec le script `extract_illustrations.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/LabelStudio/extract_illustrations.py)), extraire les données de la vérité terrain

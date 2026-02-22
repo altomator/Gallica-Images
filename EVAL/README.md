@@ -254,7 +254,13 @@ Le script `analyse.py` ([source](https://github.com/altomator/Gallica-Images/blo
 python analyse.py aligned.csv
 ```
 
+![Rotation](https://github.com/altomator/Gallica-Images/blob/main/img/rotation.png "Rotation")
+
+![Technique](https://github.com/altomator/Gallica-Images/blob/main/img/technique.png "Technique")
+
+
 ![Matrice de confusion](https://github.com/altomator/Gallica-Images/blob/main/img/confusion.png "Matrice de confusion")
+
 
 
 3. **Contrôler visuellement**

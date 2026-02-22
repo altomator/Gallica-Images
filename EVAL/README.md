@@ -73,7 +73,7 @@ btv1b103365581-f21
 
 - extraction des vignettes des pages et des illustrations avec l'API Gallica IIIF : `--iiif`
 - annotation des pages avec les boîtes englobantes des illustrations : `--annot`
-- facteur de taille de téléchargements des images IIIF (50% par défaut)
+- facteur de taille de téléchargement des images IIIF (50% par défaut)
   
 ```
 cd ..

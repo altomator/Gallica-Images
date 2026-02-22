@@ -170,12 +170,12 @@ A ce stade, le dossier de travail doit être conforme à :
 10. Calculer les métriques : 
 
 Appeler le script ([source](https://github.com/eypros/Object-Detection-Metrics/tree/master)) avec les paramètres suivants :
-- la technique principale du dataset, par exemple ci-dessous `photographie`,
+- les techniques présentes dans le dataset,
 - le seuil de détection IoU (0.5 par défaut)
 
   
 ```
-python pascalvoc.py --accepted-classes photographie --gt-coords rel --det-coords rel --gt-format xywh --det-format xywh --img-size 800,800 --threshold 0.75 --gt-folder DATA_gt --det-folder DATA_detect
+python pascalvoc.py --accepted-classes photographie dessin estampe --gt-coords rel --det-coords rel --gt-format xywh --det-format xywh --img-size 800,800 --threshold 0.75 --gt-folder DATA_gt --det-folder DATA_detect
 
 ```
 

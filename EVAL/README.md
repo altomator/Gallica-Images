@@ -50,7 +50,7 @@ cp mon_path/export.json ./dataset_LS.json
 
 #### 1. Préparation des données 
 
-1. Extraire du fichier .json les URL des pages qui ont été annotées dans Label Studio :
+1. **Extraire** du fichier .json les URL des pages qui ont été annotées dans Label Studio :
 
 > grep "iiif" dataset_LS.json > liste_pages.txt
 
@@ -65,10 +65,10 @@ btv1b103365581-f21
 ```
 
 
-4. Si besoin, filtrer les pages à exclure (pages utilisées pour l'apprentissage).
+4. Si besoin, **filtrer** les pages à exclure (pages utilisées pour l'apprentissage).
 
 
-5. Avec le script `extract_illustrations.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/LabelStudio/extract_illustrations.py)), extraire les données de la vérité terrain
+5. Avec le script `extract_illustrations.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/LabelStudio/extract_illustrations.py)), **extraire les données de la vérité terrain**
 (_ground truth_) du dataset LabelStudio et de la liste filtrée. Il dispose de deux options :
 
 - extraction des vignettes des pages et des illustrations avec l'API Gallica IIIF : `--iiif`
@@ -115,7 +115,7 @@ Ce script annote également les images des pages annotées (dossier `GT_PAGES`) 
 ![Image annotée](https://github.com/altomator/Gallica-Images/blob/main/img/page.png "Page annotée")
 
 
-6. Avec le script `get_response.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/LabelStudio/get_response.py)), extraire les données de la base Gallica Image relatives aux pages de la vérité terrain.
+6. Avec le script `get_response.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/LabelStudio/get_response.py)), **extraire les données de la base Gallica Image** relatives aux pages de la vérité terrain.
    
 ```
 python get_response.py SET1
@@ -125,7 +125,7 @@ Ce script est à lancer depuis le réseau BnF. Il lit la liste des pages annoté
    - stockée dans le dossier du dataset, dans un sous-dossier `DATA_db`.
 
 
-7. Avec le script `extract_response.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/LabelStudio/extract_response.py)), exploiter les données de la base Gallica Image stockées dans `DATA_db`.
+7. Avec le script `extract_response.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/LabelStudio/extract_response.py)), **exploiter les données de la base Gallica Image** stockées dans `DATA_db`.
 
 Options : 
 - extraction des vignettes des illustrations avec l'API Gallica IIIF : `--iiif`
@@ -179,13 +179,13 @@ A ce stade, le dossier de travail doit être conforme à :
 
 1. Recopier les dossiers `DATA_gt` et `DATA_detect` dans le dossier de calcul des métriques `SegMetric`.
 
-9. Harmoniser les fichiers (on doit obtenir le même nombre de fichiers dans chacun des deux dossiers) avec le script `clean_files.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/clean_files.py)) :
+9. **Harmoniser** les fichiers (on doit obtenir le même nombre de fichiers dans chacun des deux dossiers) avec le script `clean_files.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/clean_files.py)) :
 
 ```
 python clean_files.py DATA_gt DATA_detect
 ```
 
-10. Calculer les métriques : 
+10. **Calculer** les métriques : 
 
 L'objectif est d'aligner les segmentations (boîtes englobantes) entre la vérité terrain et les détections puis de mesurer une métrique de recouvrement.
 
@@ -217,16 +217,16 @@ AP: 0.80920 (photographie)
 mAP: 0.40460
 ```
 
-### Contrôle des classifications (technique, fonction, genre)
+### Contrôle des classifications (technique, fonction, genre) des illustrations
 
-Les classifications générées sont décrites dans les fichiers du dossier `DATA_detect` :
+Les classifications sont décrites dans les fichiers du dossier `DATA_detect` :
 - technique de l'illustration,
 - fonction et genre de l'illustration,
 - éventuelle rotation de l'illustration.
 
 Afin de minimiser l'influence de la segmentation sur l'évaluation de ces données, on aligne au préalable la vérité terrain et les détections (même approche que ci-avant) avec le script `align-BB.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/classification/align-BB.py)), puis les mesures sont faites sur les illustrations alignées.
 
-1. Alignement avec un seuil IoU :
+1. **Aligner** avec un seuil IoU :
    
 ```
 python align-BB.py DATA_gt DATA_det 0.75
@@ -242,7 +242,7 @@ Number of matches: 953
 ---------------------------------
 ```
 
-2. Mesures
+2. **Mesurer**
 
 Le script `analyse.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/classification/analyse.py)) produit une série d'analyses sur les illustrations alignées (rotation, technique, fonction) : 
 - matrice de confusion
@@ -252,7 +252,7 @@ Le script `analyse.py` ([source](https://github.com/altomator/Gallica-Images/blo
 python analyse.py aligned.csv
 ```
 
-3. Contrôle visuel
+3. **Contrôler visuellement**
 
 Une application Streamlit `QA.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/classification/QA.py)) permet de visualiser les pages avec le tracé des boîtes englobantes, selon trois modalités :
 - pages avec au moins une illustration alignée,

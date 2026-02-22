@@ -27,12 +27,19 @@ import argparse
 parser = argparse.ArgumentParser(description="Extract illustrations and data from a LabelStudio dataset.")
 parser.add_argument("folder_path", type=str,  help="Path to the dataset folder to be processed")
 parser.add_argument('--iiif', action='store_true', help='Extract images with IIIF')
-
+parser.add_argument('--annot', action='store_true', help='Annotate images')
+parser.add_argument(
+    '-f',
+    '--factor',
+    type=int,
+    default=30,
+    help='Size factor for the IIIF images (%)')
 args = parser.parse_args()
 
-# Update the folder_path variable with the argument value
 folder_path = args.folder_path
 extract_img = args.iiif
+annot_img = args.annot
+iiif_output = args.factor
 
 ###         PARAMETER           ###
 #  Data file for the demand:
@@ -44,8 +51,8 @@ json_file_path = 'dataset_LS.json'
 #  Annotation type to filter
 annotation_type = 'BUG,blanche,photographie,photomeca,dessin,dessinmeca,gravure,schema,plan,carte,carteajouer,estampe,peinture,décoration,bd'
 
-# Size factor for the IIIF images downloaded
-iiif_output = 15
+
+
 ######################################
 
 # output directory for extracted images
@@ -109,6 +116,11 @@ if extract_img:
     print("\033[92m# Warning: Image extraction is enabled #\033[0m")
 else:
     print("\033[92m# Warning: Image extraction is disabled #\033[0m")
+if annot_img:
+    print("\033[92m# Warning: Image annotation is enabled #\033[0m")
+else:
+    print("\033[92m# Warning: Image annotation is disabled #\033[0m")
+
 
 
 # Aggregate vue numbers by ARK identifiers (from the data file)
@@ -310,35 +322,36 @@ for image in images:
 
                 # Annotating the full page with bounding box and label
                 image_path = f"{OUT_pages}/{ark}-{vue}.jpg"
-                if os.path.exists(image_path):
-                    # open the image to extract the dimensions
-                    try:
-                        with Image.open(image_path) as img:
-                            # Extract image dimensions
-                            img_width, img_height = img.size
-                    except Exception as e:
+                if annot_img:
+                    if os.path.exists(image_path):
+                        # open the image to extract the dimensions
+                        try:
+                            with Image.open(image_path) as img:
+                                # Extract image dimensions
+                                img_width, img_height = img.size
+                        except Exception as e:
                             print(f"## Error: Unable to open image file: \033[91m{image_path}\033[0m ##")
                             print(e)
                             continue
-                    with Image.open(image_path) as img:
-                        draw = ImageDraw.Draw(img)
-                        # Calculate the bounding box coordinates
-                        # Convert percentage to pixel values
-                        x_p = int(x * img_width / 100)
-                        y_p = int(y * img_height / 100)
-                        w_p = int(w * img_width / 100)
-                        h_p = int(h * img_height / 100)
-                        # Draw the bounding box
-                        draw.rectangle([x_p, y_p, x_p + w_p, y_p + h_p], outline="greenyellow", width=2)
-                        # Add rotation value near the top right corner of the bounding box
-                        # Adjust position near the top right corner
-                        draw.text((x_p+w_p-50, y_p+8), f"{rot}", fill="greenyellow")
-                        draw.text((x_p+w_p-50, y_p+18), label[:8], fill="greenyellow")
-                        # Save the annotated image
-                        annotated_image_path = f"{OUT_pages}/{ark}-{vue}.jpg"
-                        img.save(annotated_image_path)
-                else:
-                    print(f"Full page not found, can't draw bounding box: \033[91m{image_path}\033[0m")
+                        with Image.open(image_path) as img:
+                            draw = ImageDraw.Draw(img)
+                            # Calculate the bounding box coordinates
+                            # Convert percentage to pixel values
+                            x_p = int(x * img_width / 100)
+                            y_p = int(y * img_height / 100)
+                            w_p = int(w * img_width / 100)
+                            h_p = int(h * img_height / 100)
+                            # Draw the bounding box
+                            draw.rectangle([x_p, y_p, x_p + w_p, y_p + h_p], outline="greenyellow", width=2)
+                            # Add rotation value near the top right corner of the bounding box
+                            # Adjust position near the top right corner
+                            draw.text((x_p+w_p-50, y_p+8), f"{rot}", fill="greenyellow")
+                            draw.text((x_p+w_p-50, y_p+18), label[:8], fill="greenyellow")
+                            # Save the annotated image
+                            annotated_image_path = f"{OUT_pages}/{ark}-{vue}.jpg"
+                            img.save(annotated_image_path)
+                    else:
+                        print(f"Full page not found, can't draw bounding box: \033[91m{image_path}\033[0m")
 
             # Write the ARK, title, vue number, bbox to the CSV file
             # Ensure the CSV file is open in append mode before writing

@@ -7,8 +7,6 @@ from PIL import Image, ImageDraw
 
 
 ###        PARAMETERS          ###
-# Size factor for the IIIF images downloaded
-iiif_output = 20
 # GT data file (from LabelStudio)
 GT_file = 'GT.csv'
 # input directory for the JSON data extracted from the database thanks to the API
@@ -28,11 +26,19 @@ iiif_endpoint="https://openapi.bnf.fr/iiif/image/v3/ark:/12148/"
 parser = argparse.ArgumentParser(description="Extract illustrations and data from the Gallica Images database.")
 parser.add_argument("folder_path", type=str,  help="Path to the dataset folder")
 parser.add_argument('--iiif', action='store_true', help='Extract images with IIIF')
+parser.add_argument('--annot', action='store_true', help='Annotate images')
+parser.add_argument(
+    '-f',
+    '--factor',
+    type=int,
+    default=30,
+    help='Size factor for the IIIF images (%)')
 args = parser.parse_args()
 
-# Update the folder_path variable with the argument value
 folder_path = args.folder_path
 extract_img = args.iiif
+annot_img = args.annot
+iiif_output = args.factor
 
 # Initialize a dictionary to store the ARK illustrations for a ARK doc
 aggregated_data = defaultdict(list)

@@ -258,7 +258,7 @@ Une application Streamlit `QA.py` ([source](https://github.com/altomator/Gallica
 streamlit run QA.py -- --data_file aligned.csv
 ```
 
-![QA](https://github.com/altomator/Gallica-Images/blob/main/img/streamlit.png "App QA")
+![QA](https://github.com/altomator/Gallica-Images/blob/main/img/QA.png "App QA")
 
 
 

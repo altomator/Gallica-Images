@@ -239,7 +239,7 @@ Number of matches: 953
 
 2. Mesures
 
-Le script `analyse.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/classification/analyse.py)) produit une série d'analyses sur les illustrations alignées : 
+Le script `analyse.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/classification/analyse.py)) produit une série d'analyses sur les illustrations alignées (rotation, technique, fonction) : 
 - matrice de confusion
 - courbe de précision/rappel
 
@@ -248,7 +248,17 @@ python analyse.py aligned.csv
 ```
 
 3. Contrôle visuel
-4. 
+
+Une application Streamlit `QA.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/classification/QA.py)) permet de visualiser les pages avec le tracé des boîtes englobantes, selon trois catégories :
+- pages avec au moins une illustration alignée,
+- pages avec au moins une VT non alignée,
+- pages avec au moins une détection non alignée.
+
+```
+streamlit run QA.py -- --data_file aligned.csv
+```
+
+![QA](https://github.com/altomator/Gallica-Images/blob/main/img/streamlit.png "App QA")
 
 
 

@@ -188,7 +188,7 @@ Pour focaliser l'analyse sur la segmentation et non la segmentation + classifica
 python pascalvoc.py --accepted-classes photographie --gt-coords rel --det-coords rel --gt-format xywh --det-format xywh --img-size 800,800 --threshold 0.75 --gt-folder DATA_gt --det-folder DATA_detect
 ```
 
-Le script calcule la courbe AP et la valeur de la précision moyenne pour chaque classe (la précision moyenne est l'aire sous la courbe précision-rappel d'un détecteur d'objets pour une classe donnée).
+Le script calcule la courbe AP et la valeur de la précision moyenne pour chaque classe (la précision moyenne est l'aire sous la courbe précision-rappel d'un détecteur d'objets pour une classe donnée) ainsi que la moyenne des moyennes.
 
 ![Courbe AP](https://github.com/altomator/Gallica-Images/blob/main/img/AP.png "Courbe AP")
 
@@ -199,9 +199,9 @@ AP: 0.80920 (photographie)
 mAP: 0.40460
 ```
 
-### Contrôle de la rotation 
-
 ### Contrôle des classifications (technique, fonction, genre)
+
+### Contrôle de la rotation 
 
 ### Contrôle de l'OCR
 

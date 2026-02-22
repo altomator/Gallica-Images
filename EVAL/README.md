@@ -230,7 +230,9 @@ Afin de minimiser l'influence de la segmentation sur l'évaluation de ces donné
    
 ```
 python align-BB.py DATA_gt DATA_det 0.75
-    ...
+```
+```
+...
 ...processing  btv1b8529846d-9 
    found a match for:  bfkfk25r8x6 
 ...saving aligned CSV for btv1b8529846d-9

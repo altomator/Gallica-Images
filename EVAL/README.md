@@ -159,9 +159,9 @@ A ce stade, le dossier de travail doit être conforme à :
 
 #### 2. Calcul des métriques
 
-1. Recopier les dossiers `DATA_gt` et `DATA_detect` dans le dossier de calcul des métriques `SegMetric`, en les renommant respectivement `detections-txt`et `groundtruths-txt`.
+1. Recopier les dossiers `DATA_gt` et `DATA_detect` dans le dossier de calcul des métriques `SegMetric`.
 
-9. Harmoniser les fichiers :
+9. Harmoniser les fichiers (on doit obtenir le même nombre de fichiers dans chaque dossier) :
 
 ```
 > python clean_files.py
@@ -169,21 +169,35 @@ A ce stade, le dossier de travail doit être conforme à :
 
 10. Calculer les métriques : 
 
+L'objectif est d'aligner les segmentations (boîtes englobantes) entre la vérité terrain et les détections puis de mesurer :
+
+Pour ce faire, le script calcule la moyenne des précisions moyennes de chaque classe (AP, _average precision_), en considérant une détection correcte si la valeur IoU (_intersection over union_) de recouvrement entre la vérité terrain et la boîte prédite est ≥ à un seuil donné et la classe est correcte (ici la technique). mAP@50 signifie donc _mean Average Precision_ pour un IoU de 0.50).
+
+![IoU](https://github.com/altomator/Gallica-Images/blob/main/img/IoU.png "IoU")
+
 Appeler le script ([source](https://github.com/eypros/Object-Detection-Metrics/tree/master)) avec les paramètres suivants :
 - les techniques présentes dans le dataset,
-- le seuil de détection IoU (0.5 par défaut)
-
+- le seuil de détection IoU (0.5 par défaut = permissif, 0.75 = strict).
   
 ```
 python pascalvoc.py --accepted-classes photographie dessin estampe --gt-coords rel --det-coords rel --gt-format xywh --det-format xywh --img-size 800,800 --threshold 0.75 --gt-folder DATA_gt --det-folder DATA_detect
-
 ```
 
-Le script calcule la courbe AP et la valeur de la précision moyenne (la précision moyenne est l'aire sous la courbe précision-rappel d'un détecteur d'objets pour une classe donnée).
+Pour focaliser l'analyse sur la segmentation et non la segmentation + classification, demander l'analyse sur la classe principale du dataset :
+```
+python pascalvoc.py --accepted-classes photographie --gt-coords rel --det-coords rel --gt-format xywh --det-format xywh --img-size 800,800 --threshold 0.75 --gt-folder DATA_gt --det-folder DATA_detect
+```
+
+Le script calcule la courbe AP et la valeur de la précision moyenne pour chaque classe (la précision moyenne est l'aire sous la courbe précision-rappel d'un détecteur d'objets pour une classe donnée).
 
 ![Courbe AP](https://github.com/altomator/Gallica-Images/blob/main/img/AP.png "Courbe AP")
 
-
+Métriques AP : 
+```
+AP: 0.00000 (décoration)
+AP: 0.80920 (photographie)
+mAP: 0.40460
+```
 
 ### Contrôle de la rotation 
 

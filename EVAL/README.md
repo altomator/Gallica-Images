@@ -12,7 +12,7 @@
 
 ## Contexte
 
-Mesure de la qualité des modèles d'IA entraînés dans le cadre du projet Gallica Images.
+Mesure de la qualité des modèles d'IA entraînés dans le cadre du projet [Gallica Images](https://www.bnf.fr/fr/les-projets-en-intelligence-artificielle-la-bnf).
 
 
 ## Vérité terrain
@@ -249,7 +249,7 @@ python analyse.py aligned.csv
 
 3. Contrôle visuel
 
-Une application Streamlit `QA.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/classification/QA.py)) permet de visualiser les pages avec le tracé des boîtes englobantes, selon trois catégories :
+Une application Streamlit `QA.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/classification/QA.py)) permet de visualiser les pages avec le tracé des boîtes englobantes, selon trois modalités :
 - pages avec au moins une illustration alignée,
 - pages avec au moins une VT non alignée,
 - pages avec au moins une détection non alignée.

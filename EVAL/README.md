@@ -229,7 +229,7 @@ Afin de minimiser l'influence de la segmentation sur l'évaluation de ces donné
 1. **Aligner** avec un seuil IoU :
    
 ```
-python align-BB.py DATA_gt DATA_det 0.75
+python align-BB.py DATA_gt DATA_detect 0.75
 ```
 ```
 ...

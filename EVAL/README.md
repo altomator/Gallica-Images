@@ -129,7 +129,7 @@ Ce script est à lancer depuis le réseau BnF. Il lit la liste des pages annoté
 
 Options : 
 - extraction des vignettes des illustrations avec l'API Gallica IIIF : `--iiif`
-- annotation des pages (dossier `GT_PAGES`) avec les boîtes englobantes des illustrations : `--annot`
+- annotation des pages (dossier `GT_PAGES`) avec les boîtes englobantes des illustrations (en rouge) : `--annot`
 - facteur de taille de téléchargement des images IIIF (30% par défaut)
 
 ```
@@ -169,7 +169,6 @@ Exemple du format JSON pour btv1b8432385n-6.json :
 },
 {...
 ```
-Ce script annote également les images des pages (dossier `GT_PAGES`) avec les boîtes englobantes des détections (en rouge).
 
 A ce stade, le dossier de travail doit être conforme à :
 

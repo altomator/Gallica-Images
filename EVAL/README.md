@@ -127,11 +127,18 @@ python extract_response.py SET1
 ```
 
 Ce script produit : 
- - un fichier .txt par page au format Pascalvoc (classe, confiance, bbox, ARK de l'illustration), stocké dans un dossier `DATA_detect`,
+ - un fichier .txt par page au format Pascal VOC (classe, confiance, x, y, w, h), stocké dans un dossier `DATA_detect`. Le format est enrichi par les métadonnées suivantes : rotation, fonction, genre, ARK de l'illustration
 - un fichier JSON par page incluant les principales métadonnées et les textes océrisés, dans un dossier `DATA_ocr`,
 - une vignette par illustration (optionnel), dans un dossier `ILL`.
 
-Exemple du format JSON :
+Exemple du format Pascal VOC pour btv1b8432385n-6.txt (3 illustations décrites) :
+```
+photographie 1.0 0.395065 0.188601 0.21510300000000002 0.234205 0 Carte_postale Représentations_humaines_/_Portraits bfkfk28zc4k 
+photographie 1.0 0.579109 0.529845 0.215216 0.235005 0 Carte_postale Représentations_humaines_/_Portraits bfkfk28zc68 
+photographie 1.0 0.191361 0.523878 0.21456399999999998 0.238319 0 Carte_postale Représentations_humaines_/_Portraits bfkfk28zc5x 
+```
+
+Exemple du format JSON pour btv1b8432385n-6.json :
 ```
 {
 "doc_ark": "btv1b8432385n",
@@ -148,7 +155,7 @@ Exemple du format JSON :
     "content_section": "N/A",
     "content_text": "N/A",
     "context_text_before": "N/A",
-    "context_text_after": "N/A"
+    "context_text_after": "Venise"
 },
 {...
 ```
@@ -163,10 +170,10 @@ A ce stade, le dossier de travail doit être conforme à :
 
 1. Recopier les dossiers `DATA_gt` et `DATA_detect` dans le dossier de calcul des métriques `SegMetric`.
 
-9. Harmoniser les fichiers (on doit obtenir le même nombre de fichiers dans chacun des deux dossiers) :
+9. Harmoniser les fichiers (on doit obtenir le même nombre de fichiers dans chacun des deux dossiers) avec le script `clean_files.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/clean_files.py)) :
 
 ```
-python clean_files.py
+python clean_files.py DATA_gt DATA_detect
 ```
 
 10. Calculer les métriques : 
@@ -203,6 +210,16 @@ mAP: 0.40460
 
 ### Contrôle des classifications (technique, fonction, genre)
 
+Les classifications générées sont décrites dans les fichiers du dossier `DATA_detect` :
+- technique de l'illustration,
+- fonction et genre de l'illustration,
+- éventuelle rotation de l'illustration.
+
+Afin de minimiser l'influence de la segmentation sur l'évaluation de ces données, on aligne la vérité terrain et les détections avec le script `align-BB.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/classification/align-BB.py.py)), puis on mesure sur les illustrations alignées.
+
+```
+python align-BB.py DATA_gt DATA_det 0.75
+```
 
 ### Contrôle de la rotation 
 

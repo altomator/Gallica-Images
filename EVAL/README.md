@@ -32,7 +32,7 @@ Plusieurs datasets Label Studio sont disponibles dans le dossier [DATASETS](), o
 1. Exporter au format JSON le dataset depuis [LabelStudio](https://labelstud.io/guide/export).
 
 
-2. Dans le dossier de travail LabelStudio, créer un sous-dossier nommé d'après le dataset, par exemple :
+2. Dans le dossier de travail `LabelStudio`, créer un sous-dossier nommé d'après le dataset, par exemple :
 
 ```
 mkdir SET1
@@ -169,7 +169,7 @@ Exemple du format JSON pour btv1b8432385n-6.json :
 {...
 ```
 
-A ce stade, le dossier du dataset doit être conforme à :
+A ce stade, le dossier du dataset `SET1` doit être conforme à :
 
 ![Dossier](https://github.com/altomator/Gallica-Images/blob/main/img/dossier.png "Dossier de travail")
 
@@ -224,7 +224,7 @@ Les classifications sont décrites dans les fichiers du dossier `DATA_detect` :
 - fonction et genre de l'illustration,
 - éventuelle rotation de l'illustration.
 
-Afin de minimiser l'influence de la segmentation sur l'évaluation de ces données, on aligne au préalable la vérité terrain et les détections (même approche que ci-avant) avec le script `align-BB.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/classification/align-BB.py)), puis les mesures sont faites sur les illustrations alignées.
+Afin de minimiser l'influence de la segmentation sur l'évaluation de ces données, on aligne au préalable la vérité terrain et les détections (même approche que ci-avant) avec le script `align-BB.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/align-BB.py)), puis les mesures sont faites sur les illustrations alignées.
 
 1. **Aligner** avec un seuil IoU :
    
@@ -244,7 +244,7 @@ Number of matches: 953
 
 2. **Mesurer**
 
-Le script `analyse.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/classification/analyse.py)) produit une série d'analyses sur les illustrations alignées (rotation, technique, fonction) : 
+Le script `analyse.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/analyse.py)) produit une série d'analyses sur les illustrations alignées (rotation, technique, fonction) : 
 - matrice de confusion
 - courbe de précision/rappel
 
@@ -252,12 +252,17 @@ Le script `analyse.py` ([source](https://github.com/altomator/Gallica-Images/blo
 python analyse.py aligned.csv
 ```
 
+![Matrice de confusion](https://github.com/altomator/Gallica-Images/blob/main/img/confusion.png "Matrice de confusion")
+
+
 3. **Contrôler visuellement**
 
-Une application Streamlit `QA.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/classification/QA.py)) permet de visualiser les pages avec le tracé des boîtes englobantes, selon trois modalités :
+Une application Streamlit `QA.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/QA.py)) permet de visualiser les pages avec le tracé des boîtes englobantes, selon trois modalités :
 - pages avec au moins une illustration alignée,
 - pages avec au moins une VT non alignée,
 - pages avec au moins une détection non alignée.
+
+Ce script utilise les images du dossier `GT_PAGES`.
 
 ```
 streamlit run QA.py -- --data_file aligned.csv

@@ -177,7 +177,7 @@ Pour ce faire, le script calcule la moyenne (mAP) des précisions moyennes de ch
 
 ![IoU](https://github.com/altomator/Gallica-Images/blob/main/img/iou.jpg "IoU")
 
-Installer localement les bibliothèques `lib` de ce [github](https://github.com/eypros/Object-Detection-Metrics/tree/master) puis appeler le script `analyse-AP.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/analyse-AP.py.py)) avec les paramètres suivants :
+Installer localement les bibliothèques `lib` de ce [github](https://github.com/eypros/Object-Detection-Metrics/tree/master) puis appeler le script `analyse-AP.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/analyse-AP.py)) avec les paramètres suivants :
 - les techniques présentes dans le dataset,
 - le seuil de détection IoU (0.5 par défaut = permissif, 0.75 = strict).
   

@@ -297,13 +297,13 @@ streamlit run QA_app.py -- --data_file aligned.csv
 
 ### OCR
 
-Une application Streamlit `display_OCR.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/display-OCR_app.py)) permet d'afficher l'OCR associé à une illustration détectée.
+Une application Streamlit `display_OCR.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/ocr/display_OCR_app.py)) permet d'afficher l'OCR associé à une illustration détectée, ainsi que la vérité terrain de la page (quand elle existe).
 
 
 Ce script utilise les images du dossier `GT_PAGES` et les données JSON du dossier `DATA_ocr`.
 
 ```
-streamlit run display-OCR_app.py -- aligned.csv GT_PAGES DATA_ocr
+streamlit run display_OCR_app.py -- aligned.csv GT_PAGES DATA_ocr ocr_corrigés
 ```
 
 ![OCR](https://github.com/altomator/Gallica-Images/blob/main/img/ocr.png "App OCR")

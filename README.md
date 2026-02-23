@@ -2,7 +2,7 @@
 
 **Plan** : 
 
-- [*Modèle de données*](#odèle-de-données)
+- [*Modèle de données*](#modèle-de-données)
 - [*Evaluation*](#evaluation)
 - [*Divers*](#divers)
 

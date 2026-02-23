@@ -193,17 +193,17 @@ Pour ce faire, le script calcule la moyenne (mAP) des précisions moyennes de ch
 
 ![IoU](https://github.com/altomator/Gallica-Images/blob/main/img/iou.jpg "IoU")
 
-Installer localement les bibliothèques `lib` de ce [github](https://github.com/eypros/Object-Detection-Metrics/tree/master) puis appeler le script `analyse-AP.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/analyse-AP.py)) avec les paramètres suivants :
+Installer localement les bibliothèques `lib` de ce [github](https://github.com/eypros/Object-Detection-Metrics/tree/master) puis appeler le script `analyse_AP.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/analyse_AP.py)) avec les paramètres suivants :
 - les techniques présentes dans le dataset,
 - le seuil de détection IoU (0.5 par défaut = permissif, 0.75 = strict).
   
 ```
-python analyse-AP.py --accepted-classes photographie dessin estampe --gt-coords rel --det-coords rel --gt-format xywh --det-format xywh --img-size 800,800 --threshold 0.75 --gt-folder DATA_gt --det-folder DATA_detect
+python analyse_AP.py --accepted-classes photographie dessin estampe --gt-coords rel --det-coords rel --gt-format xywh --det-format xywh --img-size 800,800 --threshold 0.75 --gt-folder DATA_gt --det-folder DATA_detect
 ```
 
 Pour focaliser l'analyse sur la segmentation et non la segmentation + classification, demander l'analyse sur la classe principale du dataset :
 ```
-python analyse-AP.py --accepted-classes photographie --gt-coords rel --det-coords rel --gt-format xywh --det-format xywh --img-size 800,800 --threshold 0.75 --gt-folder DATA_gt --det-folder DATA_detect
+python analyse_AP.py --accepted-classes photographie --gt-coords rel --det-coords rel --gt-format xywh --det-format xywh --img-size 800,800 --threshold 0.75 --gt-folder DATA_gt --det-folder DATA_detect
 ```
 
 Le script calcule la courbe AP et la valeur de la précision moyenne pour chaque classe (la précision moyenne est l'aire sous la courbe précision-rappel d'un détecteur d'objets pour une classe donnée) ainsi que la moyenne des moyennes.
@@ -224,12 +224,12 @@ Les classifications sont décrites dans les fichiers du dossier `DATA_detect` :
 - fonction et genre de l'illustration,
 - éventuelle rotation de l'illustration.
 
-Afin de minimiser l'influence de la segmentation sur l'évaluation de ces données, on aligne au préalable la vérité terrain et les détections (même approche que ci-avant) avec le script `align-BB.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/align-BB.py)), puis les mesures sont faites sur les illustrations alignées.
+Afin de minimiser l'influence de la segmentation sur l'évaluation de ces données, on aligne au préalable la vérité terrain et les détections (même approche que ci-avant) avec le script `align_BB.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/align_BB.py)), puis les mesures sont faites sur les illustrations alignées.
 
 1. **Aligner** avec un seuil IoU :
    
 ```
-python align-BB.py DATA_gt DATA_detect 0.75
+python align_BB.py DATA_gt DATA_detect 0.75
 ```
 ```
 ...

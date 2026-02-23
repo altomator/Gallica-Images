@@ -263,21 +263,6 @@ python analyse.py aligned.csv
 
 
 
-3. **Contrôler visuellement**
-
-Une application Streamlit `QA.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/QA.py)) permet de visualiser les pages avec le tracé des boîtes englobantes, selon trois modalités :
-- pages avec au moins une illustration alignée,
-- pages avec au moins une VT non alignée,
-- pages avec au moins une détection non alignée.
-
-Ce script utilise les images du dossier `GT_PAGES`.
-
-```
-streamlit run QA.py -- --data_file aligned.csv
-```
-
-![QA](https://github.com/altomator/Gallica-Images/blob/main/img/QA.png "App QA")
-
 
 
 ### Contrôle de l'OCR
@@ -285,9 +270,44 @@ streamlit run QA.py -- --data_file aligned.csv
 
 
 
+
+
 ## Evaluation qualitative
 
-### Avec Panoptic
+### Segmentation 
+
+#### Streamlit
+
+Une application Streamlit `QA_app.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/QA.py)) permet de visualiser les pages avec le tracé des boîtes englobantes, selon trois modalités :
+- pages avec au moins une illustration alignée,
+- pages avec au moins une VT non alignée,
+- pages avec au moins une détection non alignée.
+
+Ce script utilise les images du dossier `GT_PAGES`.
+
+```
+streamlit run QA_app.py -- --data_file aligned.csv
+```
+
+![QA](https://github.com/altomator/Gallica-Images/blob/main/img/QA.png "App QA")
+
+#### Avec Panoptic (CERES)
+
+
+### OCR
+
+Une application Streamlit `display_OCR.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/display_OCR.py)) permet d'afficher l'OCR associé à une illustration détectée.
+
+
+Ce script utilise les images du dossier `GT_PAGES` et les données JSON du dossier `DATA_ocr`.
+
+```
+streamlit run display-OCR_app.py -- aligned.csv GT_PAGES DATA_ocr
+```
+
+![OCR](https://github.com/altomator/Gallica-Images/blob/main/img/ocr.png "App OCR")
+
+
 
 ## Divers
 

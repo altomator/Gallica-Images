@@ -169,7 +169,7 @@ Exemple du format JSON pour btv1b8432385n-6.json :
 {...
 ```
 
-A ce stade, le dossier du dataset `SET1` doit être conforme à :
+A ce stade, le dossier du dataset (exemple `SET1`) doit être conforme à :
 
 ![Dossier](https://github.com/altomator/Gallica-Images/blob/main/img/dossier.png "Dossier de travail")
 

@@ -278,7 +278,7 @@ python analyse.py aligned.csv
 
 #### Streamlit
 
-Une application Streamlit `QA_app.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/QA.py)) permet de visualiser les pages avec le tracé des boîtes englobantes, selon trois modalités :
+Une application Streamlit `QA_app.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/QA_app.py)) permet de visualiser les pages avec le tracé des boîtes englobantes, selon trois modalités :
 - pages avec au moins une illustration alignée,
 - pages avec au moins une VT non alignée,
 - pages avec au moins une détection non alignée.

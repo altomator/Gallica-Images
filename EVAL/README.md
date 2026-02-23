@@ -4,8 +4,8 @@
 
 - [*Contexte*](#Contexte)
 - [*Vérité terrain*](#Contexte)
-- [*Evaluation quantitative*](#evaluation)
-- [*Evaluation qualitative*](#evaluation)
+- [*Evaluation quantitative*](#evaluation-quantitative)
+- [*Evaluation qualitative*](#evaluationqualitative)
 
 
 ***

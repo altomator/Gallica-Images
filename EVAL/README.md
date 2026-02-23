@@ -219,7 +219,7 @@ mAP: 0.40460
 
 ### Contrôle des classifications (technique, fonction, genre) des illustrations
 
-Les classifications sont décrites dans les fichiers du dossier `DATA_detect` :
+Les classifications produites par IA sont décrites dans les fichiers du dossier `DATA_detect` :
 - technique de l'illustration,
 - fonction et genre de l'illustration,
 - éventuelle rotation de l'illustration.
@@ -246,7 +246,7 @@ Number of matches: 953
 
 2. **Mesurer**
 
-Le script `analyse.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/analyse.py)) produit une série d'analyses sur les illustrations alignées (rotation, technique, fonction) : 
+Le script `analyse.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/analyse.py)) produit une série d'analyses sur les illustrations alignées (rotation, technique) : 
 - matrice de confusion
 - courbe de précision/rappel
 
@@ -262,7 +262,7 @@ python analyse.py aligned.csv
 ![Matrice de confusion](https://github.com/altomator/Gallica-Images/blob/main/img/confusion.png "Matrice de confusion")
 
 
-
+Note : les datasets Label Studio n'incluent pas d'annotations sur les fonctions et genres des illustrations.
 
 
 ### Contrôle de l'OCR

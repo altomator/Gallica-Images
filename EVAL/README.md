@@ -269,6 +269,7 @@ Note : les datasets Label Studio n'incluent pas d'annotations sur les fonctions 
 
 #### 1. Produire un OCR baseline
 
+##### Avec les API Mistral
 Le script `extract_ocr.py` permet de produire un OCR à l'aide de deux modèles au choix :
 - Mistra OCR
 - Pixtral 
@@ -283,7 +284,27 @@ Il génère l'OCR dans un dossier `ocr_output` sous la forme de fichiers (un par
 - JSON pour Pixtral
 
 
+##### Avec MLX (OSX)
+
+```
+python extract_with_mlx.py liste_pages.txt
+```
+
+Puis nettoyer les fichiers : 
+
+```
+python clean_text.py ocr_output
+```
+
+
 #### 2. Produire une vérité terrain 
+
+Faire une copie du dossier OCR qui vient d'être produit puis corriger les textes avec l'application Streamnit :
+```
+
+```
+
+
 
 #### 3. Comparer les OCR  
 

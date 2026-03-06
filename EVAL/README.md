@@ -267,7 +267,26 @@ Note : les datasets Label Studio n'incluent pas d'annotations sur les fonctions 
 
 ### Contrôle de l'OCR
 
-** to do **
+#### 1. Produire un OCR baseline
+
+Le script `extract_ocr.py` permet de produire un OCR à l'aide de deux modèles au choix :
+- Mistra OCR
+- Pixtral 
+
+Le script est appelé sur le dossier de travail et lit la liste des pages à traiter (`liste_pages.txt') :
+```
+python extract_ocr.py ocr
+```
+
+Il génère l'OCR dans un dossier `ocr_output` sous la forme de fichiers (un par page) :
+- Markdown pour Mistral OCR
+- JSON pour Pixtral
+
+
+#### 2. Produire une vérité terrain 
+
+#### 3. Comparer les OCR  
+
 
 
 

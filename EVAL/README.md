@@ -320,7 +320,7 @@ streamlit run read_app.py SET1/iiif_images SET1/ocr_corrigés SET1/ocr_output.ol
 
 #### 3. Comparer les OCR  
 
-Ce script compare la vérité terrain avec un OCR à l'aide d'une méthode "sac de mots". Il prend en argment :
+Ce script compare la vérité terrain avec un OCR à l'aide d'une méthode "sac de mots". Il prend en argument :
 - le dossier de la vérité terrain
 - le dossier de l'OCR
 - le format de l'OCR (JSON, MD, texte)
@@ -330,14 +330,14 @@ Ce script compare la vérité terrain avec un OCR à l'aide d'une méthode "sac 
 python compare_ocr.py SET 1/ocr_corrigés ocr_output.pixtral json --relaxed
 ```
 
-Le script calcule un score par fichier ainsi que deux moyennes, moyenne des scores et moyenne pondéré par le nombre de mots de chaque fichier :
+Le script calcule un score par fichier (enregistré dans un fichier CSV) ainsi que deux moyennes, moyenne des scores et moyenne des scores pondéré par le nombre de mots :
 
 ```
 ...
 -----------------------------
-Analysis of 371 files of GT
+Analysis of 371 files of ground truth
 -----------------------------
-... reading  bow_results.csv
+... reading  BoW_results.csv
 ... found  364 rows
 Global Bag of Words similarity (files average):  0.78 
 Global Bag of Words similarity (weighted average):  0.77 

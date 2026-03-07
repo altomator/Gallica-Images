@@ -320,7 +320,15 @@ streamlit run read_app.py SET1/iiif_images SET1/ocr_corrigés SET1/ocr_output.ol
 
 #### 3. Comparer les OCR  
 
+Ce script compare la vérité terrain avec un OCR à l'aide d'une méthode "sac de mots". Il prend en argment :
+- le dossier de la vérité terrain
+- le dossier de l'OCR
+- le format de l'OCR (JSON, MD, texte)
+- le mode de comparaison :  relaché (charactères accentués, nombres > à 4 chiffres)
 
+```
+python compare_ocr.py SET 1/ocr_corrigés ocr_output.pixtral json --relaxed
+```
 
 
 

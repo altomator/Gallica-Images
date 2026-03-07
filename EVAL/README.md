@@ -328,8 +328,10 @@ Ce script compare la vérité terrain avec un OCR à l'aide d'une méthode "sac 
 
 ```
 python compare_ocr.py SET 1/ocr_corrigés ocr_output.pixtral json --relaxed
+```
 
 Le script calcule un score par fichier ainsi que deux moyennes, moyenne des scores et moyenne pondéré par le nombre de mots de chaque fichier :
+
 ```
 ...
 -----------------------------

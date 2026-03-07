@@ -305,12 +305,13 @@ streamlit run correct_app.py SET1/iiif_output SET1/ocr_à_corriger
 ```
 
 Le panneau de droite permet de corriger le texte océrisé.
+
 ![Correction](https://github.com/altomator/Gallica-Images/blob/main/img/correct_ocr.png "App de correction")
 
-Une autre application permet de visualiser  deux versions de texte en regard l'une de l'autre : 
+Une autre application permet de visualiser deux versions de texte en regard l'une de l'autre : 
 
 ```
-streamlit run read_app.py SET1/ocr_pixtral SET1/ocr_pixtral 
+streamlit run read_app.py SET1/iiif_images SET1/ocr_corrigés SET1/ocr_output.olmOCR 
 ```
 
 ![Lecture](https://github.com/altomator/Gallica-Images/blob/main/img/read_ocr.png "App de lecture")

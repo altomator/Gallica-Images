@@ -324,12 +324,11 @@ Ce script compare la vérité terrain avec un OCR à l'aide d'une méthode "sac 
 - le dossier de la vérité terrain
 - le dossier de l'OCR
 - le format de l'OCR (JSON, MD, texte)
-- le mode de comparaison :  relaché (charactères accentués, nombres > à 4 chiffres)
+- le mode de comparaison relaché (en option) : charactères accentués, nombres > à 4 chiffres, article élidé.
 
 ```
 python compare_ocr.py SET 1/ocr_corrigés ocr_output.pixtral json --relaxed
 ```
-
 
 
 ## Evaluation qualitative

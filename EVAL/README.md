@@ -290,8 +290,7 @@ Il génère l'OCR dans un dossier `SET1/ocr_output` sous la forme de fichiers (u
 python extract_with_mlx.py liste_pages.txt
 ```
 
-Puis nettoyer les fichiers : 
-
+Puis nettoyer les fichiers (balises HTML ou LaTex) : 
 ```
 python clean_text.py ocr_output
 ```

@@ -52,9 +52,9 @@ cp mon_path/export.json ./dataset_LS.json
 
 1. **Extraire** du fichier .json les URL des pages qui ont été annotées dans Label Studio :
 
-> grep "iiif" dataset_LS.json > liste_pages.txt
+> grep "iiif" dataset_LS.json > liste-pages.txt
 
-Editer le fichier `liste_pages.txt`pour aboutir à un format `ark-vue` :
+Editer le fichier `liste-pages.txt`pour aboutir à un format `ark-vue` :
 ```
 btv1b103365581-f1
 btv1b103365581-f13
@@ -119,7 +119,7 @@ Ce script annote également les images des pages annotées (dossier `GT_PAGES`) 
 ```
 python get_response.py SET1
 ```
-Ce script est à lancer depuis le réseau BnF. Il lit la liste des pages annotées (`SET1/liste_pages.txt`) et produit : 
+Ce script est à lancer depuis le réseau BnF. Il lit la liste des pages annotées (`SET1/liste-pages.txt`) et produit : 
    - une réponse JSON par document Gallica,
    - stockée dans le dossier du dataset, dans un sous-dossier `DATA_db`.
 
@@ -275,29 +275,38 @@ Le script `extract_ocr.py` permet de produire un OCR à l'aide de deux modèles 
 - Mistral OCR
 - Pixtral 
 
-Le script est appelé sur le dossier de travail et lit la liste des pages à traiter (`liste_pages.txt`). Les images sont passées au modèle via leur URL IIIF. 
+Le script est appelé sur le dossier de travail et lit la liste des pages à traiter (`liste-pages.txt`). Les images sont passées au modèle via leur URL IIIF. 
 
 ```
 python extract_ocr.py SET1 vlm
 ```
 
 Des paramètres sont à régler dans le script :
-- `max_size` : taille de l'image maximal dans sa plus grande dimension,
-- température du modèle
-- prompt (pour Pixtral)
+- taille maximale de l'image dans sa plus grande dimension,
+- température du modèle,
+- prompt (pour Pixtral).
   
 Le script génère l'OCR dans un dossier `SET1/ocr_output` sous la forme de fichiers (un par page) au format :
 - Markdown pour Mistral OCR,
 - JSON pour Pixtral.
 
 
-##### Avec MLX (OSX)
+
+##### Avec MLX (MacOSX)
+
+Processus équivalent avec la bibliothèque [MLX](https://github.com/ml-explore/mlx) : 
 
 ```
-python extract_with_mlx.py liste_pages.txt
+python extract_with_mlx.py liste-pages.txt
 ```
 
-Puis nettoyer les fichiers (balises HTML ou LaTex) : 
+Des paramètres sont à régler dans le script :
+- nom du modèle,
+- taille maximale de l'image dans sa plus grande dimension,
+- température, top_k, top_p,
+- prompt.
+  
+Il faut nettoyer les fichiers produits par certains modèles pour obtenir du plein texte (balises HTML ou LaTex) : 
 ```
 python clean_text.py ocr_output
 ```

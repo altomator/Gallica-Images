@@ -137,7 +137,8 @@ python extract_response.py SET1 --iiif 25
 
 Ce script produit : 
  - un fichier .txt par page au format Pascal VOC (classe, confiance, x, y, w, h), stocké dans un dossier `DATA_detect`. Le format est enrichi par les métadonnées suivantes : rotation, fonction, genre, ARK de l'illustration
-- un fichier JSON par page incluant les principales métadonnées et les textes océrisés, dans un dossier `DATA_ocr`,
+- un fichier .json par page incluant les principales métadonnées et les textes océrisés, dans un dossier `DATA_md`,
+- un fichier .txt par page donnant les textes océrisés, dans un dossier `DATA_ocr`,
 - une vignette par illustration (optionnel), dans un dossier `ILL`.
 
 Exemple du format Pascal VOC pour btv1b8432385n-f6.txt (3 illustations décrites) :

@@ -271,16 +271,22 @@ Note : les datasets Label Studio n'incluent pas d'annotations sur les fonctions 
 #### 1. Produire un OCR baseline
 
 ##### Avec les API Mistral
-Le script `extract_ocr.py` permet de produire un OCR à l'aide de deux modèles au choix :
+Le script `extract_ocr.py` permet de produire un OCR à l'aide de deux modèles Mistral au choix :
 - Mistral OCR
 - Pixtral 
 
-Le script est appelé sur le dossier de travail et lit la liste des pages à traiter (`liste_pages.txt`) :
+Le script est appelé sur le dossier de travail et lit la liste des pages à traiter (`liste_pages.txt`). Les images sont passées au modèle via leur URL IIIF. 
+
 ```
 python extract_ocr.py SET1 vlm
 ```
 
-Il génère l'OCR dans un dossier `SET1/ocr_output` sous la forme de fichiers (un par page) au format :
+Des paramètres sont à régler dans le script :
+- `max_size` : taille de l'image maximal dans sa plus grande dimension,
+- température du modèle
+- prompt (pour Pixtral)
+  
+Le script génère l'OCR dans un dossier `SET1/ocr_output` sous la forme de fichiers (un par page) au format :
 - Markdown pour Mistral OCR,
 - JSON pour Pixtral.
 

@@ -1,5 +1,3 @@
-# streamlit run display-OCR.py -- data.csv /path/to/DATA_ocr
-
 
 import streamlit as st
 import pandas as pd
@@ -19,7 +17,7 @@ def is_full_row(row, prefix):
 # Argument Parsing
 # -----------------------------
 if len(sys.argv) < 4:
-    st.error("Usage: streamlit run display-OCR.py -- <csv_file> <image_folder> <gt_folder> <ocr_folder>")
+    st.error("Usage: streamlit run display_OCR_app.py -- <csv_file> <image_folder> <gt_folder> <ocr_folder>")
     st.stop()
 
 csv_file = sys.argv[1]
@@ -179,7 +177,7 @@ with left_col:
 # -----------------------------
 with right_col:
 
-    st.header("OCR de l'illustration")
+    #st.header("OCR de l'illustration")
 
     image_rows = df[df["ark-vue"] == current_image_name]
     det_ids = image_rows["det_id"].dropna().unique()
@@ -198,13 +196,12 @@ with right_col:
                 st.error(f"OCR file not found: {file_path}")
                 return
             st.markdown(f"### {title}")
-            # GT = text files
             if format=="txt":
                 with open(file_path, "r", encoding="utf-8") as f:
                     ocr_data = f.read()
                     st.write(ocr_data)
-            # GT = JSON files
-            if format=="json" and title=="Vérité terrain":
+            # Here we have the GT, text is in the "text" element
+            if format=="json" and title=="Vérité terrain de la page":
                 with open(file_path, "r", encoding="utf-8") as f:
                     ocr_data = json.load(f)
                     text = ocr_data.get("text", "").replace("\n", "\n\n")
@@ -215,7 +212,7 @@ with right_col:
                 selected_content = next((item for item in ocr_data.get("ills", []) 
                                    if str(item.get("ark")) == str(selected_det_id)), None)
                 if selected_content is None:
-                    st.warning(f"Pas de d'OCR pour cette illustration.")
+                    st.warning(f"Pas d'OCR pour cette illustration.")
                 else:
                     st.markdown("**Content Section :**")
                     st.write(selected_content.get("content_section", ""))
@@ -227,8 +224,7 @@ with right_col:
                     st.write(selected_content.get("context_text_after", ""))
 
         with col_ocr:
-            display_ocr_data(ocr_folder, "OCR détecté", "json")
+            display_ocr_data(ocr_folder, "OCR illustration", "json")
 
         with col_gt:
-            #display_ocr_data(gt_pages_path, "Vérité terrain", "txt")
-            display_ocr_data(gt_pages_path, "Vérité terrain", "json")
+            display_ocr_data(gt_pages_path, "Vérité terrain de la page", "json")

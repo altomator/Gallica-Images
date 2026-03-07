@@ -15,6 +15,8 @@ IN_data = 'DATA_db'
 OUT_data = "DATA_detect"
 # output directory for storing the extracted text from the database
 OUT_ocr = "DATA_ocr"
+# output directory for storing the extracted MD + OCR
+OUT_md = "DATA_md"
 # GT folder of full page images
 GT_folder = 'GT_PAGES'
 # output directory for the extracted illustrations from the database
@@ -74,7 +76,7 @@ def read_csv_file(file_path):
 
 def get_element(json_data, elt):
     tmp=json_data.get(elt)
-    return tmp[0] if tmp else "N/A"
+    return tmp[0] if tmp else ""
 
 def clean_json(folder):
     content=""
@@ -178,7 +180,7 @@ def call_doc_api(ark_doc):
                 confidence = 1.0
 
                 # Write the data to a txt file (Pascalvoc format + extra data)
-                file_name = os.path.join(OUT_data, f"{ark_doc}-{vue}.txt")
+                file_name = os.path.join(OUT_data, f"{ark_doc}-f{vue}.txt")
                 with open(file_name, 'a') as outfile:
                     outfile.write(f"{class_name} {confidence} {x/100} {y/100} {w/100} {h/100} {rotation} {function_name} {genre_name} {ill_ark} \n")
 
@@ -204,13 +206,19 @@ def call_doc_api(ark_doc):
                 "context_text_after": context_text_after
                 }
 
-                # Write the OCR to a txt file
-                ocr_name = os.path.join(OUT_ocr, f"{ark_doc}-{vue}.json")
-                if not os.path.exists(ocr_name):
-                    print("  writing OCR in:", ocr_name)
-                    with open(ocr_name, 'a') as outfile:
-                        outfile.write("{\n\"doc_ark\": \""+ark_value+"\",\n\"page\": \""+vue+"\",\n\"title\": \""+title_value+"\",\n\"ills\":[\n")
+                # Write the OCR to a .txt file
+                ocr_name = os.path.join(OUT_ocr, f"{ark_doc}-f{vue}.txt")
+                print("  writing OCR in:", ocr_name)
                 with open(ocr_name, 'a') as outfile:
+                    outfile.write(content_section + "\n" + content_text + "\n" + context_text_before + "\n" + context_text_after+"\n")           
+
+                # Write the MD to a .json file
+                md_name = os.path.join(OUT_md, f"{ark_doc}-f{vue}.json")
+                if not os.path.exists(md_name):
+                    print("  writing metadata in:", md_name)
+                    with open(md_name, 'w') as outfile:
+                        outfile.write("{\n\"doc_ark\": \""+ark_value+"\",\n\"page\": \""+vue+"\",\n\"title\": \""+title_value+"\",\n\"ills\":[\n")
+                with open(md_name, 'a') as outfile:
                     json.dump(data, outfile, indent=4)
                     outfile.write(",")
 
@@ -220,7 +228,7 @@ def call_doc_api(ark_doc):
                     iiif_url = f"{iiif_endpoint}{ark_doc}/f{vue}/pct:{bbox}/pct:{iiif_output}/{rotation}/default.jpg"
                     #print(f"IIIF URL: {iiif_url}")
                     # Construct the output file name
-                    output_file_name = f"{OUT_ill}/{ark_doc}-{vue}-{doc_index}.jpg"
+                    output_file_name = f"{OUT_ill}/{ark_doc}-f{vue}-{doc_index}.jpg"
                     print(f"Output file name: {output_file_name}")
                     if os.path.exists(output_file_name):
                         print(f"File already exists: {output_file_name}")
@@ -234,7 +242,7 @@ def call_doc_api(ark_doc):
 
                 # Annotate the GT image with the bbox and class name
                 if os.path.exists(GT_folder):
-                    gt_file_name = os.path.join(GT_folder, f"{ark_doc}-{vue}.jpg")
+                    gt_file_name = os.path.join(GT_folder, f"{ark_doc}-f{vue}.jpg")
                     print(f"Annotating GT image: {gt_file_name}")
                     if os.path.exists(gt_file_name):
                         # Annotate the GT image with the bbox and class name
@@ -298,11 +306,15 @@ print("...changed working directory to script directory:", os.getcwd())
 # Create the output directory for storing the illustration data (CSV format)
 rm_dir(OUT_ocr)
 rm_dir(OUT_data)
-os.makedirs(OUT_ocr, exist_ok=True)
-os.makedirs(OUT_data, exist_ok=True)
+rm_dir(OUT_md)
+os.makedirs(OUT_ocr,exist_ok=True)
+os.makedirs(OUT_data,exist_ok=True)
+os.makedirs(OUT_md,exist_ok=True)
+os.makedirs(OUT_ill, exist_ok=True)
+
 print("Output directory for illustration data:", OUT_data)
 print("Output directory for OCR data:", OUT_ocr)
-os.makedirs(OUT_ill, exist_ok=True)
+print("Output directory for metadata:", OUT_md)
 print("Output directory for illustrations:", OUT_ill)
 
 print("--------------------------------------------")
@@ -339,7 +351,8 @@ for line in gt_data[1:]:  # Skip the first line
         call_doc_api(ark_value)
 
 print("--------------------------------------------")
-clean_json(OUT_ocr)
+# closing the JSON data
+clean_json(OUT_md)
 
 print("Number of IIIF illustration extracted:\033[1m", extracted_iiif,'\033[0m')
 print("Number of documents in ground truth data:\033[1m", len(aggregated_data),'\033[0m')

@@ -7,8 +7,8 @@
 # - size factor for the IIIF images downloaded
 
 #OUTPUTS:
-# - full pages images -> $OUT_pages
-# - illustrations images -> $OUT_ill
+# - full pages images 
+# - illustrations images 
 # - annotations data: ark, title, vue, class, bounding boxes, rotation -> $csv_file_path
 # - annotations data in Pascalvoc format for every  image, in a file nammed ark-vue.txt
 
@@ -44,7 +44,7 @@ iiif_output = args.factor
 ###         PARAMETER           ###
 #  Data file for the demand:
 #  list of ARK IDs + vue number
-file_path = 'liste_pages.txt'
+pages_path = 'liste-pages.txt'
 #  Label Studio dataset file
 json_file_path = 'dataset_LS.json'
 
@@ -81,7 +81,7 @@ def read_file_to_array(file_path):
         return []
 
 ### MAIN ###
-# Change the working directory to the script's directory
+# Change the working directory 
 script_directory = os.path.dirname(os.path.abspath(__file__))
 os.chdir(script_directory+"/"+folder_path)
 print("Changed working directory to script directory:", os.getcwd())
@@ -125,14 +125,14 @@ else:
 
 # Aggregate vue numbers by ARK identifiers (from the data file)
 print("--------------------------------------------")
-print("... reading the data file for the demand:", file_path)
+print("... reading the data file for the list of pages:", pages_path)
 aggregated_data = defaultdict(list)
-file_path = './' + file_path
+pages_path = './' + pages_path
 # Check if the file exists
-if not os.path.exists(file_path):
-    print(f"Error: The file \033[91m'{file_path}'\033[0m does not exist.")
+if not os.path.exists(pages_path):
+    print(f"Error: The file \033[91m'{pages_path}'\033[0m does not exist.")
     exit()
-content_array = read_file_to_array(file_path)
+content_array = read_file_to_array(pages_path)
 for line in content_array:
     parts = line.split('-f')
     if len(parts) > 1:
@@ -153,7 +153,7 @@ if extract_img:
             image_url = f"{iiif_endpoint}{identifier}/f{number}/full/pct:{iiif_output}/0/default.jpg"
             print(f"Image URL: {image_url}")
             # Construct the output file name
-            output_file_name = f"{OUT_pages}/{identifier}-{number}.jpg"
+            output_file_name = f"{OUT_pages}/{identifier}-f{number}.jpg"
             # Download the image using wget
             if os.path.exists(output_file_name):
                 print(f"File already exists: {output_file_name}")
@@ -306,22 +306,22 @@ for image in images:
                     bbox_data += "," + rot + "," + label + ","
                     # we don't have Function and Genre data: N/A
                     pascalvoc += label + " " + voc_data + " " + rot + " N/A N/A" + "\n"
-
+                print(bbox_data) 
                 if extract_img and bbox_data:
                     # Exporting a IIIF thumbnail for the bounding box
                     image_url = f"{iiif_endpoint}{ark}/f{vue}/pct:{x},{y},{w},{h}/pct:{iiif_output}/0/default.jpg"
                     #print(f"Image URL: {image_url}")
-                    output_file_name = f"{OUT_ill}/{ark}-{vue}_{bbox_index}.jpg"
+                    #output_file_name = f"{OUT_ill}/{ark}-f{vue}_{bbox_index}.jpg"
                     # Check if a subfolder named after the label exists in OUT_ill
                     label_folder = os.path.join(OUT_ill, label)
                     os.makedirs(label_folder, exist_ok=True)
                     # Update the output file name to include the label folder
-                    output_file_name = os.path.join(label_folder, f"{ark}-{vue}_{bbox_index}.jpg")
+                    output_file_name = os.path.join(label_folder, f"{ark}-f{vue}_{bbox_index}.jpg")
                     os.system(f"wget -q -O {output_file_name} {image_url}")
                     print('.', end='')
 
                 # Annotating the full page with bounding box and label
-                image_path = f"{OUT_pages}/{ark}-{vue}.jpg"
+                image_path = f"{OUT_pages}/{ark}-f{vue}.jpg"
                 if annot_img:
                     if os.path.exists(image_path):
                         # open the image to extract the dimensions
@@ -348,8 +348,8 @@ for image in images:
                             draw.text((x_p+w_p-50, y_p+8), f"{rot}", fill="greenyellow")
                             draw.text((x_p+w_p-50, y_p+18), label[:8], fill="greenyellow")
                             # Save the annotated image
-                            annotated_image_path = f"{OUT_pages}/{ark}-{vue}.jpg"
-                            img.save(annotated_image_path)
+                            #annotated_image_path = f"{OUT_pages}/{ark}-f{vue}.jpg"
+                            img.save(image_path)
                     else:
                         print(f"Full page not found, can't draw bounding box: \033[91m{image_path}\033[0m")
 
@@ -363,7 +363,7 @@ for image in images:
                 csv_writer.writerow([ark, unique_documents[ark], vue, bbox_data])
 
             # Write the data to a txt file (Pascalvoc format + extra data)
-            file_name = os.path.join(OUT_data, f"{ark}-{vue}.txt")
+            file_name = os.path.join(OUT_data, f"{ark}-f{vue}.txt")
             with open(file_name, 'a') as outfile:
                 if label != "blanche":
                     print("...writing Pascalvoc format:",file_name, pascalvoc)
@@ -376,9 +376,9 @@ for image in images:
         print('-', end='')
 
 print("--------------------------------------------")
-print(f"\nNumber of annotated pages related to the demand ({file_path}):\033[1m {annotated_images}\033[0m")
+print(f"\nNumber of annotated pages related to the demand ({folder_path}):\033[1m {annotated_images}\033[0m")
 print(f"Number of illustrations generated:\033[1m {bbox_n}\033[0m")
-print(f"Number of rotation found:\033[1m {bbox_nrot}\033[0m")
+print(f"Number of rotations found:\033[1m {bbox_nrot}\033[0m")
 print("--------------------------------------------")
 
 exit()

@@ -382,7 +382,9 @@ streamlit run QA_app.py -- --data_file aligned.csv
 
 #### Avec Panoptic (CERES)
 
-** to do **
+##### 1. Charger les images
+
+##### 2. Charger les métadonnées
 
 ### OCR
 

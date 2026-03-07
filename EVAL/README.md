@@ -102,7 +102,7 @@ Dans le cas d'une page contenant plusieurs illustrations :
 btv1b8432385n;Una visita al fronte italiano : Maggio 1916;6;39.38,18.94,21.4,23.37,0,photographie,19.02,52.77,21.66,23.23,0,photographie,57.74,53.07,21.6,23.58,0,photographie,
 ```
 
-Exemple Pascalvoc pour le fichier `btv1b103365581-6.txt` :
+Exemple Pascalvoc pour le fichier `btv1b103365581-f6.txt` :
 ```
 photographie 0.39380000000000004 0.1894 0.214 0.23370000000000002
 photographie 0.1902 0.5277000000000001 0.21660000000000001 0.2323
@@ -140,14 +140,14 @@ Ce script produit :
 - un fichier JSON par page incluant les principales métadonnées et les textes océrisés, dans un dossier `DATA_ocr`,
 - une vignette par illustration (optionnel), dans un dossier `ILL`.
 
-Exemple du format Pascal VOC pour btv1b8432385n-6.txt (3 illustations décrites) :
+Exemple du format Pascal VOC pour btv1b8432385n-f6.txt (3 illustations décrites) :
 ```
 photographie 1.0 0.395065 0.188601 0.21510300000000002 0.234205 0 Carte_postale Représentations_humaines_/_Portraits bfkfk28zc4k 
 photographie 1.0 0.579109 0.529845 0.215216 0.235005 0 Carte_postale Représentations_humaines_/_Portraits bfkfk28zc68 
 photographie 1.0 0.191361 0.523878 0.21456399999999998 0.238319 0 Carte_postale Représentations_humaines_/_Portraits bfkfk28zc5x 
 ```
 
-Exemple du format JSON pour btv1b8432385n-6.json :
+Exemple du format JSON pour btv1b8432385n-f6.json :
 ```
 {
 "doc_ark": "btv1b8432385n",

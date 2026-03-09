@@ -248,8 +248,8 @@ Number of matches: 953
 2. **Mesurer**
 
 Le script `analyse.py` ([source](https://github.com/altomator/Gallica-Images/blob/main/EVAL/segmentation/analyse.py)) produit une série d'analyses sur les illustrations alignées (rotation, technique) : 
-- matrice de confusion
-- courbe de précision/rappel
+- matrice de confusion,
+- courbe de précision/rappel.
 
 ```
 python analyse.py aligned.csv
@@ -272,8 +272,8 @@ Note : les datasets Label Studio n'incluent pas d'annotations sur les fonctions 
 
 ##### Avec les API Mistral
 Le script `extract_ocr.py` permet de produire un OCR à l'aide de deux modèles Mistral au choix :
-- Mistral OCR
-- Pixtral 
+- Mistral OCR,
+- Pixtral.
 
 Le script est appelé sur le dossier de travail et lit la liste des pages à traiter (`liste-pages.txt`). Les images sont passées au modèle via leur URL IIIF. 
 
@@ -337,9 +337,9 @@ streamlit run read_app.py SET1/iiif_images SET1/ocr_corrigés SET1/ocr_output.ol
 #### 3. Comparer les OCR  
 
 Ce script compare la vérité terrain avec un OCR à l'aide d'une méthode "sac de mots". Il prend en argument :
-- le dossier de la vérité terrain
-- le dossier de l'OCR
-- le format de l'OCR (JSON, MD, texte)
+- le dossier de la vérité terrain,
+- le dossier de l'OCR,
+- le format de l'OCR (JSON, MD, texte),
 - le mode de comparaison relaché (en option) : charactères accentués, nombres > à 4 chiffres, article élidé.
 
 ```
@@ -385,7 +385,7 @@ streamlit run QA_app.py -- --data_file aligned.csv
 ##### 1. Charger les images
 Le dossier des illustrations produites (`ILL`) peut être chargé dans l'outil Panoptic afin d'être l'objet d'investigations croisées (qualité de la segmentation, bruit, etc.) à l'aide des fonctionnalités de ce dernier :
 - annotation manuel d'images,
-- regroupement automatisé d'images (clusterisation, similitude)
+- regroupement automatisé d'images (clusterisation, similitude).
 
 
 ##### 2. Charger les métadonnées
@@ -406,6 +406,6 @@ streamlit run display_OCR_app.py -- aligned.csv GT_PAGES DATA_ocr ocr_corrigés
 
 
 
-## Divers
+
 
 

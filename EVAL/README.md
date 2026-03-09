@@ -383,8 +383,13 @@ streamlit run QA_app.py -- --data_file aligned.csv
 #### Avec Panoptic (CERES)
 
 ##### 1. Charger les images
+Le dossier des illustrations produites (`ILL`) peut être chargé dans l'outil Panoptic afin d'être l'objet d'investigations croisées (qualité de la segmentation, bruit, etc.) à l'aide des fonctionnalités de ce dernier :
+- annotation manuel d'images,
+- regroupement automatisé d'images (clusterisation, similitude)
+
 
 ##### 2. Charger les métadonnées
+Un fichier de métadonnées au format CSV peut aussi être intégré, afin d'enrichir le 
 
 ### OCR
 

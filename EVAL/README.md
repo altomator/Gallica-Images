@@ -389,7 +389,7 @@ Le dossier des illustrations produites (`ILL`) peut être chargé dans l'outil P
 
 
 ##### 2. Charger les métadonnées
-Un fichier de métadonnées au format CSV peut aussi être intégré, afin d'enrichir le 
+Un fichier de métadonnées au format CSV peut aussi être intégré, afin d'enrichir le travail d'analyse avec des métadonnées bibliographiques (titre, date, etc.), les métadonnées de classification (technique, fonction, genre de l'illustration) ainsi qu'un lien avec le document Gallica. 
 
 ### OCR
 

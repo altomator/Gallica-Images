@@ -31,18 +31,34 @@ Plusieurs datasets Label Studio sont disponibles dans le dossier [DATASETS](http
 
 1. Exporter au format JSON le dataset depuis [LabelStudio](https://labelstud.io/guide/export).
 
+2. Aligner le dataset Label Studio avec les métadonnées Gallica à l'aide du script `mapping_from_labelstudio.py`. Ce script va interroger l'OAI Gallica afin d'extraire les informations bibliographiques. Dans le dossier de travail `LabelStudio/OAI`, copier le dataset Label Studio dans le dossier `root` puis lancer le script :
 
-2. Dans le dossier de travail `LabelStudio`, créer un sous-dossier nommé d'après le dataset, par exemple :
+```
+python mapping_from_labelstudio.py
+```
+
+Le script produit un nouveau fichier JSON organisé en 4 parties :
+```
+{
+    "info": {...
+    },
+    "documents": [...
+    ],
+    "images": [...
+    ],
+    "annotations": [...
+    ]
+}
+```
+
+3. Dans le dossier de travail `LabelStudio`, créer un sous-dossier nommé d'après le dataset, puis y recopier le fichier JSON produit à l'étape précédente. Par exemple :
 
 ```
 mkdir SET1
 cd SET1
+cp ../OAI/gallica_dataset-at-03-16-2026-13-44-18.json ./dataset_LS.json 
 ```
 
-Y copier l'export JSON sous le nom `dataset_LS.json` : 
-```
-cp mon_path/export.json ./dataset_LS.json
-```
 
 ## Evaluation quantitative
 

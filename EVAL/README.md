@@ -37,7 +37,7 @@ Plusieurs datasets Label Studio sont disponibles dans le dossier [DATASETS](http
 python mapping_from_labelstudio.py
 ```
 
-Le script produit un nouveau fichier JSON organisé en 4 parties :
+Le script produit un nouveau fichier JSON organisé en quatre parties :
 ```
 {
     "info": {...
@@ -94,7 +94,7 @@ btv1b103365581-f21
 - facteur de taille de téléchargement des images IIIF (30% par défaut)
   
 ```
-python extract_illustrations.py SET1 --iiif 25
+python extract_illustrations.py SET1 --iiif -f 25
 ```
 
 Ce script produit : 

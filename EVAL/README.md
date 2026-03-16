@@ -68,7 +68,9 @@ cp ../OAI/gallica_dataset-at-03-16-2026-13-44-18.json ./dataset_LS.json
 
 1. **Extraire** du fichier .json les URL des pages qui ont été annotées dans Label Studio :
 
-> grep "iiif" dataset_LS.json > liste-pages.txt
+```
+grep "iiif" dataset_LS.json > liste-pages.txt
+```
 
 Editer le fichier `liste-pages.txt`pour aboutir à un format `ark-vue` :
 ```

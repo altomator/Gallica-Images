@@ -151,7 +151,7 @@ Options :
 - facteur de taille de téléchargement des images IIIF (30% par défaut)
 
 ```
-python extract_response.py SET1 --iiif 25
+python extract_response.py SET1 --iiif --annot -f 25
 ```
 
 Ce script produit : 
